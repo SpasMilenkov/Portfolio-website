@@ -21,6 +21,7 @@
         height: 90px;
         width: calc(100% - 2rem);;
         background-color:#141E1F;
+        z-index: 999;
 
         display: flex;
         align-items: center;
@@ -28,10 +29,10 @@
         padding: 0 1rem;
     }
     .nav-link{
-        color: #CAA387;
+        color: var(--orange);
         font-family: 'Roboto', sans-serif;
         text-decoration: none;
-        font-size: 25pt;
+        font-size: 20pt;
 
         padding: 0 0.25rem;
     }
