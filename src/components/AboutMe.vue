@@ -24,14 +24,14 @@
         </div>
         <div class="image-container">
             <a      
-                @mouseenter="setIcon()"
-                @mouseleave="setProfile()"
-                @touchstart="setIcon()"
-                @touchend="setProfile()"
 
                 class="git-link"  href="https://github.com/Clash2453" target="_blank"
                 >
                 <img 
+                    @mouseenter="setIcon()"
+                    @mouseleave="setProfile()"
+                    @touchstart="setIcon()"
+                    @touchend="setProfile()"
                     class="github-pfp" 
                     alt="My github profile picture"
                     :src="profilePic"
@@ -78,7 +78,7 @@
         height: 100%;
     }
     .github-pfp{
-        width: 100%;
+        width: 90%;
         max-width: 410px;
         height: auto;
         aspect-ratio: 1/1;
@@ -91,6 +91,7 @@
         align-items: center;
         justify-content: center;
         max-width: 410px;
+        border-radius: 50%;
     }
 
     @media only screen and (max-width:750px){
