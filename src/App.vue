@@ -3,6 +3,7 @@
   import AboutMe from './components/AboutMe.vue';
   import Projects from './components/Projects.vue';
   import Navigation from './components/Navigation.vue';
+  import Contacts from './components/Contacts.vue';
 </script>
 
 <template>
@@ -13,5 +14,6 @@
     <WelcomeSection/>
     <AboutMe/>
     <Projects/>
+    <Contacts/>
   </main>
 </template>
