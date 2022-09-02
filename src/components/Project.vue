@@ -80,32 +80,6 @@
         padding: 1rem 0.5rem;
         background-color: rgba(255, 222, 224, 0.2);
     }
-    .link-wrapper{
-        display: flex;
-        width: 90%;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-    }
-    .link{
-        height: 3rem;
-        width: 8rem;
-
-        font-size: 1rem;
-        font-weight: 700;
-        text-decoration: none;
-        background-color: rgb(0, 164, 107);
-        border-radius: 5px;
-        color: white;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .link:hover{
-        background-color: rgb(2, 187, 122);
-        color: rgb(51, 54, 63);
-    }
     .language-title{
         font-size: 1.5rem;
     }
