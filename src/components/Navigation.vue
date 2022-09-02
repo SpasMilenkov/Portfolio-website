@@ -1,8 +1,3 @@
-<!-- <script setup>
-
-</script>
- -->
-
 <template>
     <nav class="navigation">
         <ul class="container">
@@ -20,7 +15,7 @@
         top: 0;
         height: 90px;
         width: calc(100% - 2rem);;
-        background-color:#141E1F;
+        background-color: rgba(0,0,0,.5);
         z-index: 999;
 
         display: flex;
