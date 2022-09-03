@@ -2,15 +2,15 @@
     export default {
         data: function(){
             return {
-                profilePic: '/images/github-pfp.png',
+                profilePic: '/images/github-pfp.webp',
             }
         },
         methods: {
             setIcon(){
-                this.profilePic = '/images/github-icon.png'
+                this.profilePic = '/images/github-icon.webp'
             },
             setProfile(){
-                this.profilePic = '/images/github-pfp.png'
+                this.profilePic = '/images/github-pfp.webp'
             }
         }
     }
