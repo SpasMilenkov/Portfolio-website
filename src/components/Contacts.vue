@@ -14,14 +14,15 @@
 
 <script>
 import ContactsForm from './ContactsForm.vue';
-    export default {
+    
+export default {
     data: function () {
         return {
-            formActive: false
+            formActive: false,
         };
     },
-    methods:{
-        toggleForm(){
+    methods: {
+        toggleForm() {
             this.formActive = !this.formActive;
         }
     },
