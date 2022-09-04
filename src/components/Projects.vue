@@ -2,7 +2,7 @@
     <section id="my-projects">        
         <h1 class="section-header">My projects</h1>
         <div class="container">
-            <Project
+            <Project class="hidden"
                 v-for="(project, i) in projectList"
                 :key="i"
                 :project="project"
@@ -19,10 +19,33 @@
     data: function () {
         return {
             projectList: json,
-            project: {}
+            project: {},
+            showAble: false
         };
     },
-    methods: {},
+    methods:{
+            livePreview(path){
+                if(path === 'false') return false
+                return true
+            }
+        },
+        mounted(){
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry =>{
+                    if(entry.intersectionRatio > 0){
+                        entry.target.classList.add('fade-up')
+                        entry.target.classList.remove('hidden')
+                        observer.unobserve(entry.target)
+                    }
+                })
+            },{
+                rootMargin: '-100px'
+            })
+            const projects = [...document.getElementsByClassName('project-card')]
+            projects.forEach(element => {
+                observer.observe(element)
+            });
+        },
     components: { Project }
 }
 </script>
@@ -42,7 +65,7 @@
         flex-wrap: wrap;
         justify-content: center;
 
-        gap: 1rem;
+        gap: 2rem;
         padding: 1rem;
 
     }
