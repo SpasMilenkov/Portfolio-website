@@ -9,11 +9,12 @@
                 <span class="wrapper-title">Tech Stack:</span><br> <span v-for="(language, i) in project.software" class="language-title" :key="i"> {{' ' + language}}</span>
             </p>
             <div class="link-wrapper">
-                <a class="link" :href="project.githubRepo">Github repo</a>
+                <a class="link" :href="project.githubRepo" target="_blank">Github repo</a>
                 <a 
                 class="link" 
                 :href="project.livePreview"
-                v-if="project.livePreview ? false : true"
+                v-if="livePreview(project.livePreview)"
+                target="_blank"
                 >Life Preview</a>
             </div>
         </div>
@@ -21,6 +22,7 @@
 </template>
 
 <script>
+
     export default {
         props: ['project'],
         data: function() {
@@ -28,7 +30,10 @@
             }
         },
         methods:{
-
+            livePreview(path){
+                if(path === 'false') return false
+                return true
+            }
         }
     }
 </script>
@@ -37,6 +42,7 @@
     .project-card{
         height: 400px;
         width: 45%;
+        max-width: 800px;
         display: flex;
         align-items: center;
         border-radius: 5px;
@@ -44,7 +50,7 @@
         font-family: 'Roboto', sans-serif;
         font-size: 2rem;
 
-        background-color: rgba(200, 136, 140, 0.2);
+        background-color: rgba(200, 136, 140, 0.1);
         border-radius: 10px;
     }
     .project-image-wrapper{
@@ -90,6 +96,8 @@
         border-radius: 5px;
         padding: 0.5rem;
         background-color: rgba(255, 222, 224, 0.2);
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
     }
     .language-title{
         font-size: 1.5rem;
@@ -97,6 +105,12 @@
     .tech-stack{
         padding: 0.5rem;
         text-align: center;
+    }
+    .link-wrapper{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
     }
     @media only screen and (max-width: 1600px){
         .project-card{
