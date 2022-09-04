@@ -12,15 +12,34 @@
             setProfile(){
                 this.profilePic = '/images/github-pfp.webp'
             }
-        }
+        },
+        mounted(){
+            const fadeUpObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry =>{
+                    if(entry.intersectionRatio > 0){
+                        entry.target.classList.add('fade-in-transition')
+                        entry.target.classList.remove('hidden', 'insert-animation')
+
+                        fadeUpObserver.disconnect
+                    }
+                })
+            },{
+                rootMargin: '50px'
+            })
+            const paragraph = [...document.getElementsByClassName('about-paragraph')]
+            paragraph.forEach(element => {
+                fadeUpObserver.observe(element)
+            });
     }
+}
+
 </script>
 
 <template>
     <div class="container">
         <div class="text-area">
             <h1 class="section-header">About me</h1>
-            <p class="about-paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde nam iusto voluptatum quod, nobis veniam ipsa dolorem facere ea nisi laudantium accusamus quia cupiditate magni rerum libero eum quis suscipit!</p>
+            <p class="about-paragraph  hidden">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde nam iusto voluptatum quod, nobis veniam ipsa dolorem facere ea nisi laudantium accusamus quia cupiditate magni rerum libero eum quis suscipit!</p>
         </div>
         <div class="image-container">
             <a      
@@ -46,7 +65,8 @@
 <style scoped>
     .container{
         width: 100%;
-        min-height: calc(95vh - 2rem);
+        /* min-height: calc(95vh - 2rem); */
+        min-height: 100vh;
         background-color: #000000;
 
         display: flex;
@@ -58,11 +78,20 @@
 
     .about-paragraph{
         color: var(--orange);
-        width: 30%;
         height: 50%;
         font-size: 2rem;
         line-height: 3rem;
+        padding: 1rem;
         width: 90%;
+        border-radius: 15px;
+        background-color: rgb(33, 36, 43);
+    }
+    .section-header{
+        width: fit-content;
+        padding: 1rem;
+        border-radius: 15px;
+        box-shadow: none;
+        z-index: 1;
     }
     .text-area{
         display: flex;
@@ -76,6 +105,7 @@
         justify-content: flex-start;
         align-items: center;
         height: 100%;
+        
     }
     .github-pfp{
         width: 90%;
