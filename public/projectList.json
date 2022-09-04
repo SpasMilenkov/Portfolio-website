@@ -1,7 +1,8 @@
 [
-    {"name":"School Management System", "index": "1", "software": ["C#", "Windows Forms"], "image":"/images/courseWork.webp", "githubRepo":"https://github.com/Clash2453/School-Management-System", "livePreview":"false"},
+    {"name":"School Management System", "index": "1", "software": ["C#", "Windows Forms"], "image":"/images/project1.webp", "githubRepo":"https://github.com/Clash2453/School-Management-System", "livePreview":"false"},
     {"name":"Documentation Page", "index": "2", "software": ["HTML, CSS, JS"], "image":"/images/documentation.webp", "githubRepo":"https://github.com/Clash2453/FreeCodeCamp-Legacy-Responsive-Web-Design/tree/master/Technical%20Documentation%20Page", "livePreview":"false"},
     {"name":"Survey form", "index": "3", "software": ["HTML, CSS, JS"], "image":"/images/form.webp", "githubRepo":"https://github.com/Clash2453/FreeCodeCamp-Legacy-Responsive-Web-Design/tree/master/Survey%20Form", "livePreview":"false"},
-    {"name":"Product landing page", "index": "4", "software": ["HTML, CSS, JS"], "image":"/images/product-landing.webp", "githubRepo":"https://github.com/Clash2453/FreeCodeCamp-Legacy-Responsive-Web-Design/tree/master/Product%20Landing%20Page", "livePreview":"false"},
-    {"name":"Tribute page", "index": "5", "software": ["HTML, CSS, JS"], "image":"/images/tribute_1.webp", "githubRepo":"https://github.com/Clash2453/FreeCodeCamp-Legacy-Responsive-Web-Design/tree/master/Tribute%20Page", "livePreview":"false"}
+    {"name":"Product landing page", "index": "4", "software": ["HTML, SCSS, JS"], "image":"/images/product-landing.webp", "githubRepo":"https://github.com/Clash2453/FreeCodeCamp-Legacy-Responsive-Web-Design/tree/master/Product%20Landing%20Page", "livePreview":"false"},
+    {"name":"Tribute page", "index": "5", "software": ["HTML, CSS, JS"], "image":"/images/tribute_1.webp", "githubRepo":"https://github.com/Clash2453/FreeCodeCamp-Legacy-Responsive-Web-Design/tree/master/Tribute%20Page", "livePreview":"false"},
+    {"name":"Restaurant Page", "index": "6", "software": ["HTML, CSS, JS"], "image":"/images/restaurant-page.webp", "githubRepo":"https://github.com/Clash2453/Restaurant-Page", "livePreview":"https://clash2453.github.io/Restaurant-Page/"}
 ]
