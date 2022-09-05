@@ -1,5 +1,5 @@
 <template>
-    <section id="my-projects">        
+    <section class="my-projects">        
         <h1 class="section-header">My projects</h1>
         <div class="container">
             <Project class="hidden"
@@ -51,12 +51,13 @@
 </script>
 
 <style scoped>
-    #my-projects{
+    .my-projects{
         width: 100% ;
         background: linear-gradient(0deg, rgba(10,4,62,1) 70%, rgba(0,0,0,1) 100%);
         display: flex;
         flex-direction: column;
         gap: 2rem;
+        padding-top: 100px;
     }
     .container{
         overflow: hidden;

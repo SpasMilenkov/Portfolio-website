@@ -65,7 +65,7 @@
 <style scoped>
     .container{
         width: 100%;
-        /* min-height: calc(95vh - 2rem); */
+        min-height: calc(95vh - 2rem);
         min-height: 100vh;
         background-color: #000000;
 

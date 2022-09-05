@@ -69,6 +69,7 @@
 
 <style scoped>
     .wrapper{
+        padding-top: 100px;
         background-color: black;
         text-align: center;
     }
