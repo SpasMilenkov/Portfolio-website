@@ -75,3 +75,18 @@ img {
    animation: fade-up;
    animation-duration: 2s;
 }
+@keyframes fadeOut{
+   from{
+       opacity: 1;
+   }
+   to{
+       opacity: 0;
+   }
+}
+.fade-out-transition{
+   animation: fadeOut;
+   animation-duration: 1s;
+}
+.flow-hidden{
+   overflow: hidden;
+}
