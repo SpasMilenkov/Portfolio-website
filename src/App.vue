@@ -57,8 +57,6 @@ import TechStack from './components/TechStack.vue';
           TechStack
         }
     }
-
-
 </script>
 
 <template>
@@ -67,10 +65,10 @@ import TechStack from './components/TechStack.vue';
     <nav class="navigation" id="navBar">
         <ul class="nav-container" id="navBarContainer">
             <li v-if="mobileView" @click="toggleMenu"><i class="fi fi-rr-menu-burger nav-menu-icon"></i></li>
-            <li v-if="inView"><a class="nav-link" href="#about-me">About me</a></li>
-            <li v-if="inView"><a class="nav-link" href="#stack">Tech stack</a></li>
-            <li v-if="inView"><a class="nav-link" href="#projects">My projects</a></li>
             <li v-if="inView"><a class="nav-link" href="#contacts">Contacts</a></li>
+            <li v-if="inView"><a class="nav-link" href="#projects">My projects</a></li>
+            <li v-if="inView"><a class="nav-link" href="#stack">Tech stack</a></li>
+            <li v-if="inView"><a class="nav-link" href="#about-me">About me</a></li>
         </ul>
     </nav>
 

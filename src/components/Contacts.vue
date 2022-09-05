@@ -1,7 +1,7 @@
 <template>
     <div class="container" id="contacts">
         <div class="image-container" id="contacts-container">
-            <img class="contacts-image" src="/images/contacts-circle-banner.webp" alt="A space ship">
+            <img rel="preload" class="contacts-image" :src="image" alt="A space ship">
         </div>
         <div class="content">
             <h1 class="section-header">Contacts</h1>
@@ -22,6 +22,7 @@ export default {
     data: function () {
         return {
             formActive: false,
+            image: this.preload()
         };
     },
     methods: {
@@ -30,6 +31,11 @@ export default {
             section.classList.toggle('darken')
             document.body.classList.toggle('flow-hidden')
             this.formActive = !this.formActive;
+        },
+        preload(){
+            const image = new Image();
+            image.src = '/images/contacts-circle-banner.webp'
+            return image.src
         }
     },
     components: { ContactsForm }
