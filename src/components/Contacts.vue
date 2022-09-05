@@ -1,15 +1,18 @@
 <template>
     <div class="container" id="contacts">
-        <div class="image-container" v-if="!formActive">
+        <div class="image-container" id="contacts-container">
             <img class="contacts-image" src="/images/contacts-circle-banner.webp" alt="A space ship">
         </div>
-        <div class="content" v-if="!formActive">
+        <div class="content">
             <h1 class="section-header">Contacts</h1>
             <p class="contacts-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, nam saepe! Natus cum eius labore excepturi iste repellat possimus mollitia esse obcaecati sed, temporibus modi dolor vitae explicabo, porro delectus.</p>
             <a href="" v-on:click.prevent @click="toggleForm" class="circle-button">Contact me</a>
         </div>
-        <ContactsForm v-if="formActive" :formActive="formActive"></ContactsForm>
     </div>
+    <div class="form-container">
+
+    </div>
+    <ContactsForm v-if="formActive" :formActive="formActive"></ContactsForm>
 </template>
 
 <script>
@@ -23,6 +26,9 @@ export default {
     },
     methods: {
         toggleForm() {
+            const section = document.getElementById('contacts');
+            section.classList.toggle('darken')
+            document.body.classList.toggle('flow-hidden')
             this.formActive = !this.formActive;
         }
     },
@@ -46,6 +52,9 @@ export default {
         padding-bottom: 2rem;
         padding-top: 10rem;
         gap: 15rem;
+    }
+    .darken{
+        filter: brightness(65%);
     }
     .section-header{
         padding-top: 5rem;
