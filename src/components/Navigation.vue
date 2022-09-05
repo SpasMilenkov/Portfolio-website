@@ -1,13 +1,62 @@
 <template>
-    <nav class="navigation">
-        <ul class="container">
-            <li><a class="nav-link" href="#About-me">About me</a></li>
-            <li><a class="nav-link" href="#Projects">My projects</a></li>
-            <li><a class="nav-link" href="#Contacts">Contacts</a></li>
+    <nav class="navigation" id="navBar">
+        <ul class="container" id="navBarContainer">
+            <li v-if="mobileView" @click="toggleMenu"><i class="fi fi-rr-menu-burger menu-icon"></i></li>
+            <li v-if="inView"><a class="nav-link" href="#About-me">About me</a></li>
+            <li v-if="inView"><a class="nav-link" href="#Projects">My projects</a></li>
+            <li v-if="inView"><a class="nav-link" href="#Contacts">Contacts</a></li>
         </ul>
     </nav>
 
 </template>
+
+<script>
+    export default{
+        data: function(){
+            return{
+                inView: true,
+                mobileView: false
+            }
+        },
+        created() {
+            window.addEventListener("resize", this.onResize);
+            },
+        destroyed() {
+            window.removeEventListener("resize", this.onResize);
+        },
+        mounted(){
+            this.onResize()
+        },
+        
+        methods: {
+            onResize(){
+                const navBarContainer = document.getElementById('navBarContainer')
+                const navBar = document.getElementById('navBar');
+                if(window.innerWidth <= 650){
+                    this.inView = false;
+                    this.mobileView = true;
+
+                    navBarContainer.classList.add('container-mobile')
+                    navBarContainer.classList.remove('container')                
+                    return
+                }
+                this.inView = true;
+                this.mobileView = false;
+                navBarContainer.classList.remove('container-mobile')
+                navBar.classList.remove('nav-expanded')
+                navBarContainer.classList.add('container')
+            },
+            toggleMenu(){
+                const navBar = document.getElementById('navBar');
+                const navBarContainer = document.getElementById('navBarContainer')
+                navBar.classList.toggle('nav-expanded')
+                navBarContainer.classList.add('container-mobile')
+                this.inView = !this.inView
+            }
+        }
+    }
+</script>
+
 
 <style scoped>
     .navigation{
@@ -22,6 +71,18 @@
         align-items: center;
         flex-direction: row-reverse;
         padding: 0 1rem;
+    }
+    .nav-expanded{
+        height: fit-content;
+        padding: 0 1rem;
+    }
+    .container-mobile{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+        gap: 1rem;
+        padding-top: 1rem;
     }
     .nav-link{
         color: var(--orange);
@@ -43,5 +104,9 @@
         align-items: center;
         justify-content: flex-start;
         gap: 2rem;
+    }
+    .menu-icon{
+        font-size: 3rem;
+        color: var(--orange);
     }
 </style>
