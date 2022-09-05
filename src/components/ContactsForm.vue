@@ -53,7 +53,12 @@
         display: flex;
         flex-direction: row;
         gap: 3px;
-
+        z-index: 100;
+        position: fixed;
+        position: fixed;
+        top: 25%;
+        left: 50%;
+        transform: translateX(-50%);
         background-color: aquamarine;
     }
     .contacts-form-image{
