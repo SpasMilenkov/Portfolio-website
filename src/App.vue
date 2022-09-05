@@ -4,6 +4,7 @@
   import Projects from './components/Projects.vue';
   import Navigation from './components/Navigation.vue';
   import Contacts from './components/Contacts.vue';
+import TechStack from './components/TechStack.vue';
   export default {
     data: function(){
       return {
@@ -11,12 +12,13 @@
       }
     },
     components:{
-      Navigation,
-      WelcomeSection,
-      AboutMe,
-      Projects,
-      Contacts
-    }
+    Navigation,
+    WelcomeSection,
+    AboutMe,
+    Projects,
+    Contacts,
+    TechStack
+}
   }
 
 </script>
@@ -28,6 +30,7 @@
   <main>
     <WelcomeSection/>
     <AboutMe/>
+    <TechStack/>
     <Projects/>
     <Contacts/>
   </main>
