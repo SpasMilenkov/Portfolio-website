@@ -82,7 +82,7 @@
         font-size: 2rem;
         line-height: 3rem;
         padding: 1rem;
-        width: 90%;
+        width: 80%;
         border-radius: 15px;
         background-color: rgb(33, 36, 43);
     }
@@ -97,6 +97,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        align-items: center;
         gap: 2rem;
         width: 50%;
     }
