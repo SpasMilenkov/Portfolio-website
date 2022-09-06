@@ -9,7 +9,7 @@
         max-width: 100%;
         height: calc(100vh - 90px);
         margin-top: 90px;
-        background: url(/images/main-banner.webp), linear-gradient(0deg, rgba(0,0,0,1) 10%, rgba(89,125,140,0) 20%);
+        background: url(/images/main-banner.webp), linear-gradient(0deg, rgba(0,0,0,1) 10%, rgba(89,125,140,0) 20%),radial-gradient(circle, rgba(0,0,0,0) 57%, rgba(0,0,0,1) 100%);;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
