@@ -8,8 +8,8 @@
             </div>
             <div class="link-wrapper">
                 <a class="link" href="" v-on:click.prevent="copyURL">
-                <i v-if="!copied" class="fi fi-rr-envelope icon"></i>
-                <i v-if="copied" class="fi fi-br-check icon"></i>
+                    <h1 v-if="!copied" class="icon">Copy email</h1>
+                    <h1 v-if="copied" class="icon">Copied!</h1>
             </a>
             <a class="link" href="https://github.com/Clash2453">
                 <i class="fi fi-brands-linkedin icon"></i>
@@ -59,7 +59,7 @@
         top: 25%;
         left: 50%;
         transform: translateX(-50%);
-        background-color: aquamarine;
+        background-color: rgb(0, 255, 166);
     }
     .contacts-form-image{
         background: url(/images/contacts-banner.webp);
@@ -95,8 +95,10 @@
 
     }
     .icon{
-        font-size: 2rem;
+        font-size: 1.5rem;
         text-decoration: none;
+        font-family: 'Lato', sans-serif;
+        font-display: swap;
     }
     .fi-br-cross{
         padding-top: 0.5rem;
