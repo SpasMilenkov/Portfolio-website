@@ -24,7 +24,6 @@
                     }
                 })
             },{
-                rootMargin: '75px'
             })
             const paragraph = [...document.getElementsByClassName('about-animation')]
             paragraph.forEach(element => {
@@ -39,7 +38,7 @@
     <div class="container">
         <div class="text-area">
             <h1 class="section-header hidden about-animation">About me</h1>
-            <p class="about-paragraph  hidden about-animation">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde nam iusto voluptatum quod, nobis veniam ipsa dolorem facere ea nisi laudantium accusamus quia cupiditate magni rerum libero eum quis suscipit!</p>
+            <p class="about-paragraph  hidden about-animation"> Hi, my name is Spas Milenkov. A 19-year-old Computer and Software Science student at Technical University Sofia. I aspire to become a passionate web developer, tech enthusiast, and big fan of the night sky.</p>
         </div>
         <div class="image-container">
             <a      
@@ -78,6 +77,7 @@
 
     .about-paragraph{
         color: var(--orange);
+        font-family: 'Lato', sans-serif;
         height: 50%;
         font-size: 2rem;
         line-height: 3rem;
