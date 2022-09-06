@@ -11,7 +11,7 @@
                     <img class="logo" src="/images/tech-stack-images/css.webp" alt="">
                 </div>
                 <p class="card-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit impedit rerum magnam odio! Reprehenderit, aut! Ducimus aliquid expedita, eveniet dolorem vitae sint aut voluptatum maiores blanditiis voluptatem repellat sit nam?
+                    I picked up programming as a hobby in early 2019 when I taught myself the basics of web development, HTML, and CSS. I kept doing programming as a hobby until last year when I studied the C and C# programming languages at university.
                 </p>
             </div>
         </div>
@@ -21,10 +21,9 @@
                 <div class="image-wrapper">
                     <img class="logo" src="/images/tech-stack-images/js.webp" alt="">
                     <img class="logo" src="/images/tech-stack-images/vue.webp" alt="">
-                    <img class="logo" src="/images/tech-stack-images/dot-net.webp" alt="">
                 </div>
                 <p class="card-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit impedit rerum magnam odio! Reprehenderit, aut! Ducimus aliquid expedita, eveniet dolorem vitae sint aut voluptatum maiores blanditiis voluptatem repellat sit nam?
+                    Over the last few months, confident in my problem-solving capabilities, I have been creating projects with JavaScript and recently picked up the Vue JS framework.
                 </p>
             </div>
         </div>
@@ -33,9 +32,10 @@
             <div class="contents">
                 <div class="image-wrapper">
                     <img class="logo" src="/images/tech-stack-images/blazor.webp" alt="">
+                    <img class="logo" src="/images/tech-stack-images/dot-net.webp" alt="">
                 </div>
                 <p class="card-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit impedit rerum magnam odio! Reprehenderit, aut! Ducimus aliquid expedita, eveniet dolorem vitae sint aut voluptatum maiores blanditiis voluptatem repellat sit nam?
+                    In the future, I am looking forward to diving deeper into the backend parts of web development. Check out the Blazor and .NET frameworks and create full-stack web applications.
                 </p>
             </div>
         </div>
@@ -49,7 +49,6 @@
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.intersectionRatio > 0) {
-                        console.log('HERE I AM')
                         entry.target.classList.add('fade-up')
                         entry.target.classList.remove('t-card', 'hidden')
                         observer.unobserve(entry.target)
@@ -75,7 +74,7 @@
     }
     .container{
 
-        width: 100%;
+        width: calc(100% - 2rem);
         min-height: 100vh;
         height: 100%;
         padding: 1rem;
@@ -128,14 +127,19 @@
     .card-text{
         height: 100%;
         color: var(--orange);
-        font-family: 'Lat', sans-serif;
+        font-family: 'Lato', sans-serif;
         font-size: 1.5rem;
         padding: 0 1rem;
         line-height: 2rem;
+        min-height: 260px;
+
+        display: flex;
+        text-align:center;
+        align-items: center;
     }
-    @media only screen and (max-width: 850px){
+    @media only screen and (max-width: 875px){
         .container{
-            justify-content: flex-start;
+            justify-content: center;
         }
         .card{
             width: calc(90% - 2rem);
