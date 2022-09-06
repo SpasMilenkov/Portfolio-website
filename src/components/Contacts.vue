@@ -1,16 +1,13 @@
 <template>
-    <div class="container" id="contacts">
-        <div class="image-container" id="contacts-container">
+    <div class="container">
+        <div class="image-container filter">
             <img rel="preload" class="contacts-image" :src="image" alt="A space ship">
         </div>
-        <div class="content">
+        <div class="content filter">
             <h1 class="section-header">Contacts</h1>
-            <p class="contacts-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, nam saepe! Natus cum eius labore excepturi iste repellat possimus mollitia esse obcaecati sed, temporibus modi dolor vitae explicabo, porro delectus.</p>
-            <a href="" v-on:click.prevent @click="toggleForm" class="circle-button">Contact me</a>
+            <p class="contacts-text">Saw something that caught your attention? Got any suggestions on how to improve this portfolio? Or have a question? You can send me an email below!</p>
+            <a href="#" v-on:click.prevent @click="toggleForm" class="circle-button">Contact me</a>
         </div>
-    </div>
-    <div class="form-container">
-
     </div>
     <ContactsForm v-if="formActive" :formActive="formActive"></ContactsForm>
 </template>
@@ -27,9 +24,11 @@ export default {
     },
     methods: {
         toggleForm() {
-            const section = document.getElementById('contacts');
-            section.classList.toggle('darken')
-            document.body.classList.toggle('flow-hidden')
+            const sections = [...document.getElementsByClassName('filter')];
+            sections.forEach(section=>{
+                section.classList.toggle('darken')
+                document.body.classList.toggle('flow-hidden')
+            })
             this.formActive = !this.formActive;
         },
         preload(){
@@ -104,16 +103,19 @@ export default {
         height: auto;
         aspect-ratio: 1/1;
         border-radius: 50%;
-        background-color: rgb(254, 141, 79);
+        background-color: rgba(200, 136, 140, 0.2);
 
         display: flex;
         align-items: center;
         justify-content: center;
         
-        color: white;
+        color: var(--orange);
         font-size: 2rem;
         text-decoration: none;
         font-family: 'Lato', sans-serif;
+    }
+    .circle-button:hover{
+        transform: scale(1.02);
     }
     @media only screen and (max-width: 1200px){
         .container{
