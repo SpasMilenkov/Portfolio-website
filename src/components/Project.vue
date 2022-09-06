@@ -2,12 +2,10 @@
 <template>
     <div class="project-card">
         <div class="project-image-wrapper">
-        <img class="project-image" :src="project.image" alt=""></div>
+            <img class="project-image" :src="project.image" alt="">
+        </div>
         <div class="wrapper">
             <h1 class="project-title">{{project.name}}</h1>
-            <p class="tech-stack">
-                <span class="wrapper-title">Tech Stack:</span><br> <span v-for="(language, i) in project.software" class="language-title" :key="i"> {{' ' + language}}</span>
-            </p>
             <div class="link-wrapper">
                 <a class="link" :href="project.githubRepo" target="_blank">Github repo</a>
                 <a 
@@ -40,29 +38,32 @@
 
 <style scoped>
     .project-card{
-        height: 400px;
-        width: 45%;
-        max-width: 800px;
+        height: 50%;
+        max-height: 600px;
         display: flex;
+        flex-direction: column;
         align-items: center;
+        width: 90%;
+        max-width: 720px;
         border-radius: 5px;
         color: var(--orange);
         font-family: 'Roboto', sans-serif;
         font-size: 2rem;
+        gap: 1rem;
 
         background-color: rgba(200, 136, 140, 0.1);
         border-radius: 10px;
+        padding: 1rem;
     }
     .project-image-wrapper{
         border-radius: 10px;
-        width: 200%;
-        height: 100%;
+        width: auto;
+        max-height: 370px;
     }
     .project-image{
         width: 100%;
         height: 100%;
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
+        border-radius: 10px;
     }
     .project-card:hover{
         background-color: rgba(255, 222, 224, 0.2);
@@ -70,7 +71,8 @@
     .project-title{
         border-radius: 5px;
         background-color: rgba(255, 222, 224, 0.2);
-        width: 100%;
+        width: fit-content;
+        padding: 0.5rem;
         height: 20%;
         display: flex;
         align-items: center;
@@ -80,24 +82,23 @@
     .wrapper-title{
         border-radius: 5px;
         text-align: center;
-        width: 100%;
+        width: fit-content;
+        padding: 0.5rem;
         align-self: center;
         font-size: 1.5rem;
     }
 
     .wrapper{
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         align-items:center ;
         justify-content: center;
         gap: 1rem;
-        width: 100%;
-        height:calc(400px - 1rem) ;
+        width: calc(100% - 2rem);
+        height: fit-content;
         border-radius: 5px;
         padding: 0.5rem;
         background-color: rgba(255, 222, 224, 0.2);
-        border-top-left-radius: 0px;
-        border-bottom-left-radius: 0px;
     }
     .language-title{
         font-size: 1.5rem;
@@ -109,7 +110,6 @@
     .link-wrapper{
         display: flex;
         align-items: center;
-        flex-direction: column;
         gap: 1rem;
     }
     @media only screen and (max-width: 1600px){
