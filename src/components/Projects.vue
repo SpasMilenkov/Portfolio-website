@@ -12,7 +12,7 @@
 </template>
 
 <script>
-    import json from '../../public/projectList.json'
+    import json from '../projectList.json'
     import Project from './Project.vue';
 
     export default {

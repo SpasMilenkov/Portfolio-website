@@ -18,15 +18,15 @@
                 entries.forEach(entry =>{
                     if(entry.intersectionRatio > 0){
                         entry.target.classList.add('fade-in-transition')
-                        entry.target.classList.remove('hidden', 'insert-animation')
+                        entry.target.classList.remove('hidden', 'about-animation')
 
                         fadeUpObserver.disconnect
                     }
                 })
             },{
-                rootMargin: '50px'
+                rootMargin: '75px'
             })
-            const paragraph = [...document.getElementsByClassName('about-paragraph')]
+            const paragraph = [...document.getElementsByClassName('about-animation')]
             paragraph.forEach(element => {
                 fadeUpObserver.observe(element)
             });
@@ -38,8 +38,8 @@
 <template>
     <div class="container">
         <div class="text-area">
-            <h1 class="section-header">About me</h1>
-            <p class="about-paragraph  hidden">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde nam iusto voluptatum quod, nobis veniam ipsa dolorem facere ea nisi laudantium accusamus quia cupiditate magni rerum libero eum quis suscipit!</p>
+            <h1 class="section-header hidden about-animation">About me</h1>
+            <p class="about-paragraph  hidden about-animation">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde nam iusto voluptatum quod, nobis veniam ipsa dolorem facere ea nisi laudantium accusamus quia cupiditate magni rerum libero eum quis suscipit!</p>
         </div>
         <div class="image-container">
             <a      
