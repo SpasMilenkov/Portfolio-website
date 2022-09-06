@@ -33,7 +33,7 @@ export default {
         },
         preload(){
             const image = new Image();
-            image.src = '/images/contacts-circle-banner.webp'
+            image.src = '/Portfolio-website/images/contacts-circle-banner.webp'
             return image.src
         }
     },
