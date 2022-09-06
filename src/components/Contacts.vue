@@ -56,7 +56,6 @@ export default {
         padding-left: 5rem;
         padding-bottom: 2rem;
         padding-top: 10rem;
-        gap: 15rem;
     }
     .darken{
         filter: brightness(65%);
@@ -73,12 +72,14 @@ export default {
     }
     .image-container{
         display: flex;
-        align-items: flex-start;
+        align-items: flex-end;
+        justify-content: center;
         height: 100%;
+        width: 40%;
         padding: 2rem;
     }
     .content{
-        width: 70%;
+        width: 50%;
         display: flex;
         flex-direction: column;
         align-items: center;
