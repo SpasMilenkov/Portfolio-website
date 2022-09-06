@@ -90,3 +90,25 @@ img {
 .flow-hidden{
    overflow: hidden;
 }
+html{
+   scrollbar-width: normal;
+   scrollbar-color: var(--orange) rgba(40, 43, 52, 0.2);
+}
+html::-webkit-scrollbar{
+   width: 5px;
+   background-color: rgba(40, 43, 52, 0.9);
+}
+html::-webkit-scrollbar-thumb{
+   border-radius: 0.4vw;
+   height: 30px;
+   background-color: var(--orange);
+}
+html::-webkit-scrollbar-thumb:hover{
+   border-radius: 5px;
+   height: 30px;
+   background-color: var(--orange);
+}
+html::-webkit-scrollbar-track{
+   background-color: rgba(40, 43, 52, 0.9);
+   border-radius: 5px;
+}
