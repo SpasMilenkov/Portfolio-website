@@ -1,15 +1,7 @@
 @import "./base.css";
 
-img {
-    image-rendering: -moz-crisp-edges; /* Firefox */
-    image-rendering: -o-crisp-edges; /* Opera */
-    image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
-    image-rendering: crisp-edges;
-    -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
- }
- 
  :root{
-    --orange:#CAA387;
+    --orange:rgb(202, 163, 135);
  }
  main{
     display: flex;
@@ -87,28 +79,28 @@ img {
    animation: fadeOut;
    animation-duration: 1s;
 }
-.flow-hidden{
-   overflow: hidden;
-}
-html{
+body{
    scrollbar-width: normal;
    scrollbar-color: var(--orange) rgba(40, 43, 52, 0.2);
 }
-html::-webkit-scrollbar{
+body::-webkit-scrollbar{
    width: 5px;
    background-color: rgba(40, 43, 52, 0.9);
 }
-html::-webkit-scrollbar-thumb{
+body::-webkit-scrollbar-thumb{
    border-radius: 0.4vw;
    height: 30px;
    background-color: var(--orange);
 }
-html::-webkit-scrollbar-thumb:hover{
+body::-webkit-scrollbar-thumb:hover{
    border-radius: 5px;
    height: 30px;
    background-color: var(--orange);
 }
-html::-webkit-scrollbar-track{
+body::-webkit-scrollbar-track{
    background-color: rgba(40, 43, 52, 0.9);
    border-radius: 5px;
+}
+.flow-hidden{
+   overflow: hidden;
 }
