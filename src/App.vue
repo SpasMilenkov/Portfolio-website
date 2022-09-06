@@ -3,7 +3,7 @@
   import AboutMe from './components/AboutMe.vue';
   import Projects from './components/Projects.vue';
   import Contacts from './components/Contacts.vue';
-import TechStack from './components/TechStack.vue';
+  import TechStack from './components/TechStack.vue';
   export default {
 
     data: function(){
@@ -49,12 +49,11 @@ import TechStack from './components/TechStack.vue';
             }
         },
         components:{
-          Navigation,
           WelcomeSection,
           AboutMe,
           Projects,
-          Contacts,
-          TechStack
+          TechStack,
+          Contacts
         }
     }
 </script>
@@ -64,7 +63,7 @@ import TechStack from './components/TechStack.vue';
     <!-- <Navigation/> -->
     <nav class="navigation" id="navBar">
         <ul class="nav-container" id="navBarContainer">
-            <li v-if="mobileView" @click="toggleMenu"><i class="fi fi-rr-menu-burger nav-menu-icon"></i></li>
+            <li v-if="mobileView" @click="toggleMenu"><i class="fi fi-br-menu-burger nav-menu-icon"></i></li>
             <li v-if="inView"><a class="nav-link" href="#contacts">Contacts</a></li>
             <li v-if="inView"><a class="nav-link" href="#projects">My projects</a></li>
             <li v-if="inView"><a class="nav-link" href="#stack">Tech stack</a></li>
