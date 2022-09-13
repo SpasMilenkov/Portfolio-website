@@ -41,20 +41,6 @@
             <p class="about-paragraph  hidden about-animation"> Hi, my name is Spas Milenkov. A 19-year-old Computer and Software Science student at Technical University Sofia. I aspire to become a passionate web developer, tech enthusiast, and big fan of the night sky.</p>
         </div>
         <div class="image-container">
-            <a      
-
-                class="git-link"  href="https://github.com/Clash2453" target="_blank"
-                >
-                <img 
-                    @mouseenter="setIcon()"
-                    @mouseleave="setProfile()"
-                    @touchstart="setIcon()"
-                    @touchend="setProfile()"
-                    class="github-pfp" 
-                    alt="My github profile picture"
-                    :src="profilePic"
-                >
-            </a>
         </div>
     </div>
 </template>
@@ -64,15 +50,12 @@
 <style scoped>
     .container{
         width: 100%;
-        min-height: calc(95vh - 2rem);
         min-height: 100vh;
-        background-color: #000000;
+        background-color: #13151D;
 
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 1rem;
-        padding-top: 2rem;
     }
 
     .about-paragraph{
@@ -84,13 +67,13 @@
         padding: 1rem;
         width: 80%;
         border-radius: 15px;
-        background-color: rgb(33, 36, 43);
     }
     .section-header{
         width: fit-content;
-        padding: 1rem;
         border-radius: 15px;
+        width: 80%;
         box-shadow: none;
+        text-align: left;
         z-index: 1;
     }
     .text-area{
@@ -99,32 +82,18 @@
         justify-content: space-between;
         align-items: center;
         gap: 2rem;
-        width: 50%;
+        width: 30%;
     }
     .image-container{
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        height: 100%;
-        
+        background: url("/images/sofia-cathedral.jpg");
+        background-color: rgba(0, 0, 0, 0.2);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-blend-mode: darken;
+        height: 100vh;
+        width: 70%;
     }
-    .github-pfp{
-        width: 90%;
-        max-width: 410px;
-        height: auto;
-        aspect-ratio: 1/1;
-        border: solid 5px var(--orange);
-        border-radius: 50%;
-        background-color: rgb(230, 230, 230);
-    }
-    .git-link{
-        display:flex;
-        align-items: center;
-        justify-content: center;
-        max-width: 410px;
-        border-radius: 50%;
-    }
-
     @media only screen and (max-width:750px){
         .container{
             flex-direction: column;
@@ -143,9 +112,6 @@
         .image-container{
             width: 90%;
             justify-content: center;
-        }
-        .github-pfp{
-            width: 80%;
         }
         .section-header{
             font-size: 2.5rem;
