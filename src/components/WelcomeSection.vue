@@ -53,15 +53,17 @@
     }
     @media only screen and (max-width: 720px){
         .greeting{
-            font-size: 1.5rem;
+            font-size: 2rem;
             padding-bottom: 0;
         }
-        #main-container{
-            height: calc(290px -  1rem);
-            padding-bottom: 1.5rem;
-            background: url(/images/main-banner-mobile.webp), linear-gradient(0deg, rgba(0,0,0,1) 10%, rgba(89,125,140,0) 20%);
-            background-position: center;
-            background-size: cover;
+        .short-text{
+            font-size: 1.3rem;
+        }
+        .container{
+            width: 65%;
+        }
+        .image-container{
+            width: 35%;
         }
     }
 </style>
