@@ -32,3 +32,8 @@
     </div>
   </main>
 </template>
+<style scoped>
+#projects{
+  min-height: fit-content;
+}
+</style>
