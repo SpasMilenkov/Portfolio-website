@@ -52,6 +52,9 @@
         width: 80%;
     }
     @media only screen and (max-width: 720px){
+        #main-container{
+            flex-direction: column;
+        }
         .greeting{
             font-size: 2rem;
             padding-bottom: 0;
@@ -60,10 +63,14 @@
             font-size: 1.3rem;
         }
         .container{
-            width: 65%;
+            width: 100%;
+            min-height: fit-content;
+            gap: 2rem;
+            padding: 2rem 0;
         }
         .image-container{
-            width: 35%;
+            width: 100%;
+            min-height: 50vh;
         }
     }
 </style>
