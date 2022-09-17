@@ -40,8 +40,7 @@
             <h1 class="section-header hidden about-animation">About me</h1>
             <p class="about-paragraph  hidden about-animation"> Hi, my name is Spas Milenkov. A 19-year-old Computer and Software Science student at Technical University Sofia. I aspire to become a passionate web developer, tech enthusiast, and big fan of the night sky.</p>
         </div>
-        <div class="image-container">
-        </div>
+        <div class="image-container"></div>
     </div>
 </template>
 
@@ -99,6 +98,7 @@
             flex-direction: column;
             justify-content: flex-start;
             gap: 2rem;
+            padding-top: 2rem;
         }
         .about-paragraph{
             font-size: 1.5rem;
@@ -107,10 +107,11 @@
         }
         .text-area{
             width: 95%;
+            height: 50%;
             gap: 0.5rem;
         }
         .image-container{
-            width: 90%;
+            width: 100%;
             justify-content: center;
         }
         .section-header{
