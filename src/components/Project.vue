@@ -1,9 +1,6 @@
 
 <template>
-    <div class="project-card">
-        <div class="project-image-wrapper">
-            <img class="project-image" :src="project.image" alt="">
-        </div>
+    <div @mouseenter="showPreview" class="project-card">
         <div class="wrapper">
             <h1 class="project-title">{{project.name}}</h1>
             <div class="link-wrapper">
@@ -21,6 +18,7 @@
 
 <script>
 
+
     export default {
         props: ['project'],
         data: function() {
@@ -31,85 +29,59 @@
             livePreview(path){
                 if(path === 'false') return false
                 return true
-            }
+            },
+            showPreview(){
+                const picture = document.getElementById('preview');
+                picture.src = this.project.image;
+            },
         }
     }
 </script>
 
 <style scoped>
     .project-card{
-        height: 50%;
-        max-height: 600px;
+        height: 8rem;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 90%;
-        max-width: 720px;
-        border-radius: 5px;
-        color: var(--orange);
+        width: calc(90% - 1rem);
+        color: rgb(192, 192, 216);
         font-family: 'Roboto', sans-serif;
         font-size: 2rem;
         gap: 1rem;
 
-        background-color: rgba(200, 136, 140, 0.1);
-        border-radius: 10px;
-        padding: 1rem;
-    }
-    .project-image-wrapper{
-        border-radius: 10px;
-        width: auto;
-        max-height: 370px;
-    }
-    .project-image{
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 0.5rem;
     }
     .project-card:hover{
-        background-color: rgba(255, 222, 224, 0.2);
+        background-color: rgba(192, 192, 216, 0.2);
     }
     .project-title{
-        border-radius: 5px;
-        background-color: rgba(255, 222, 224, 0.2);
         width: fit-content;
-        padding: 0.5rem;
-        height: 20%;
+        height: 100%;
+        width: 100%;
+        max-width: 15rem;
         display: flex;
         align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-    }
-    .wrapper-title{
-        border-radius: 5px;
-        text-align: center;
-        width: fit-content;
-        padding: 0.5rem;
-        align-self: center;
+        justify-content: flex-start;
         font-size: 1.5rem;
     }
 
     .wrapper{
         display: flex;
-        flex-direction: column;
         align-items:center ;
         justify-content: center;
         gap: 1rem;
         width: calc(100% - 2rem);
-        height: fit-content;
-        border-radius: 5px;
-        padding: 0.5rem;
-        background-color: rgba(255, 222, 224, 0.2);
-    }
-    .language-title{
-        font-size: 1.5rem;
-    }
-    .tech-stack{
-        padding: 0.5rem;
-        text-align: center;
+        height: 100%;
     }
     .link-wrapper{
         display: flex;
         align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 50%;
+        height: 90%;
         gap: 1rem;
     }
     @media only screen and (max-width: 1600px){
@@ -120,23 +92,22 @@
     }
     @media only screen and (max-width: 750px){
         .project-card{
-            width: 90%;
+            width: calc(95% - 1rem);
             max-width: 730px;
             flex-direction: column;
             gap: 1rem;
-            padding: 1rem;
-            height: calc(50% + 2rem);
+            padding: 0.5rem;
+            height: calc(50% + 1rem);
+            min-height: fit-content;
         }
-        .project-image-wrapper{
-            width: 100%;
-            height: 50%;
-            max-width: 500px;
-        }
-        .project-image{
-            border-radius: 5px;
+        .project-title{
+            height: fit-content;
+            widows: 50%;
         }
         .wrapper{
             max-width: 500px;
+            widows: 100%;
+            justify-content: space-around;
         }
     }
 </style>
