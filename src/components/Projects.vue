@@ -10,50 +10,63 @@
                 />
             </div>
         </div>
-        <div class="preview-container">
+        <div v-if="!mobile" class="preview-container">
             <img src="" alt="" id="preview">
         </div>        
     </section>
 </template>
 
 <script>
-    //list of all projects 
-    import json from '../projectList.json'
-    import Project from './Project.vue';
+//list of all projects 
+import json from '../projectList.json'
+import Project from './Project.vue';
 
-    export default {
+export default {
     data: function () {
         return {
             projectList: json,
             project: {},
-            showAble: false
+            showAble: false,
+            mobile: false,
         };
     },
-    methods:{
-            //show the live preview button if it is available
-            livePreview(path){
-                if(path === 'false') return false
-                return true
-            }
+    methods: {
+        //show the live preview button if it is available
+        livePreview(path) {
+            if (path === 'false') return false
+            return true
         },
-        //add animations as user scrolls
-        mounted(){
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry =>{
-                    if(entry.intersectionRatio > 0){
-                        entry.target.classList.add('fade-up')
-                        entry.target.classList.remove('hidden')
-                        observer.unobserve(entry.target)
-                    }
-                })
-            },{
-                rootMargin: '-100px'
+        hidePreview(){
+            if(window.innerWidth <= 1275)
+                this.mobile = true;
+            if(window.innerWidth >= 1275)
+                this.mobile = false;
+        }
+    },
+    //add animations as user scrolls
+    mounted() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.intersectionRatio > 0) {
+                    entry.target.classList.add('fade-up')
+                    entry.target.classList.remove('hidden')
+                    observer.unobserve(entry.target)
+                }
             })
-            const projects = [...document.getElementsByClassName('project-card')]
-            projects.forEach(element => {
-                observer.observe(element)
-            });
-        },
+        }, {
+            rootMargin: '-100px'
+        })
+        const projects = [...document.getElementsByClassName('project-card')]
+        projects.forEach(element => {
+            observer.observe(element)
+        });
+    },
+    created() {
+        window.addEventListener("resize", this.hidePreview);
+    },
+    destroyed() {
+        window.removeEventListener("resize", this.hidePreview);
+    },
     components: { Project }
 }
 </script>
@@ -82,7 +95,6 @@
 }
 
 .container {
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -97,9 +109,10 @@
     justify-content: center;
     align-items: center;
     width: 70%;
+    background-color: rgb(20, 18, 29);
 }
 #preview{
-    widows: 100%;
+    width: 80%;
     height: auto;
 }
 .container {
@@ -127,5 +140,25 @@
 .container::-webkit-scrollbar-track {
     background-color: rgba(40, 43, 52, 0.9);
     border-radius: 5px;
+}
+@media only screen and (max-width: 1275px) {
+    #preview {
+        width: 95%;
+        height: auto;
+    }
+
+    .preview-container {
+        width: 0%;
+        height: 0%;
+    }
+    .project-container{
+        width: 100%;
+    }
+    .container{
+        min-height: fit-content;
+    }
+    .my-projects{
+        height: fit-content;
+    }
 }
 </style>
