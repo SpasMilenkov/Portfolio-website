@@ -22,7 +22,7 @@ export default {
 
 <style scoped>
     .container{
-        height: 100vh;
+        height: 75vh;
         width: 100%;
 
         display: flex;
@@ -30,46 +30,59 @@ export default {
         justify-content: space-around;
     }
     .form-container{
-        width: 70%;
+        width: 60%;
         height: 100%;
 
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    .section-header{
-        padding-top: 5rem;
-    }
     .content{
-        width: 30%;
+        width: 40%;
+        min-height: calc(586px - 3rem);
         height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         gap: 5rem;
-        background-color: #13233B;
+        background-color: #10151E;
     }
     .contacts-text{
-        font-size: 2rem;
-        color: var(--orange);
+        font-size: 1.8rem;
+        color: #C0C0D8;
         font-family: 'Lato', sans-serif;
         line-height: 2.2rem;
-        width: 80%;
+        width: 70%;
         max-width: 40rem;
-        text-align: center;
-        background-color: rgba(255, 255, 255, 0.2);
-        padding: 3rem 2rem;
+        text-align: left;
+        background-color: rgb(81, 99, 153, 0.2);
+        padding: 2rem 1rem ;
         border-radius: 10px;
     }
-    @media only screen and (max-width: 1200px){
+    @media only screen and (max-width: 950px){
         .container{
-            flex-direction: column;
+            flex-direction: column-reverse;
+            height: fit-content;
             padding-left: 0;
             width: 100%;
             gap: 0;
         }
         .contacts-text{
             font-size: 1.7rem;
+            width: 100%;
+        }
+        .content{
+            width: 100%;
+        }
+        .form-container{
+            width: 100%;
+        }
+        .content{
+            padding-top: 1rem;
+            gap: 3rem;
+            min-height: fit-content;
+            padding-bottom: 3rem;
         }
     }
     @media only screen and (max-width: 750px){
