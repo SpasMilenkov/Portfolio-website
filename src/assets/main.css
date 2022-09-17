@@ -7,7 +7,6 @@
     display: flex;
     flex-direction: column;
     gap: 0px;
-    background-color: #141E1F;
     overflow-x: hidden;
  }
  .section-header{
@@ -103,4 +102,9 @@ body::-webkit-scrollbar-track{
 }
 .flow-hidden{
    overflow: hidden;
+}
+@media only screen and (max-width:750px){
+   .link{
+      width: 6rem;
+   }
 }
