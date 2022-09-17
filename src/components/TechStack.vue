@@ -54,7 +54,7 @@
     .wrapper{
         display: flex;
         width: 100%;
-        height: 100vh;
+        height: 100%;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -76,7 +76,7 @@
     }
     .image-container{
         width: 70%;
-        height: 100vh;
+        height: calc(100vh + 2rem);
         background-image: url('/images/tech-stack-mountain.jpg');
         background-blend-mode: darken;
         background-color: rgba(0, 0, 0, 0.3);
@@ -97,13 +97,14 @@
         gap: 3rem;
     }
     .card:hover{
-        outline: 3px solid rgb(122, 161, 201);
         box-shadow: rgba(122, 161, 201, 0.2) 0px 54px 55px, rgba(122, 161, 201, 0.12) 0px -12px 30px, rgba(122, 161, 201, 0.12) 0px 4px 6px, rgba(122, 161, 201, 0.17) 0px 12px 13px, rgba(122, 161, 201, 0.09) 0px -3px 5px;
 
     }
     .logo{
         width: 5rem;
         height: auto;
+        min-width: 80px;
+        min-height: 80px;
     }
     .card-title{
         color: #7AA1C9;
@@ -126,8 +127,19 @@
         gap: 1.5rem;
     }
     @media only screen and (max-width: 875px){
+        .wrapper{
+            flex-direction: column;
+        }
         .container{
             justify-content: center;
+            width: 100%;
+            height: 50%;
+            min-height: fit-content;
+            padding: 2rem 0;
+        }
+        .image-container{
+            width: 0%;
+            height: 0%;
         }
         .card{
             width: calc(90% - 2rem);
