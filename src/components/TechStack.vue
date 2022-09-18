@@ -23,31 +23,51 @@
                 </div>
             </div>
         </div>
-        <div class="image-container"></div>
+        <div v-if="!mobile" class="image-container"></div>
         </div>
 </template>
 
 <script>
-    export default {
-        mounted() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.intersectionRatio > 0) {
-                        entry.target.classList.add('fade-in-transition')
-                        entry.target.classList.remove('t-card', 'hidden')
-                        observer.unobserve(entry.target)
-                    }
-                })
-            }, {
-                rootMargin: '-100px'
-            })
-            const cards = [...document.getElementsByClassName('card')]
-            cards.forEach(element => {
-                observer.observe(element)
-            });
-
+export default {
+    data: function(){
+        return{
+            mobile: false
         }
-    }
+    },
+    methods: {
+        hidePicture(){
+            if(window.innerWidth <= 875)
+                this.mobile = true;
+            if(window.innerWidth >= 875)
+                this.mobile = false;
+        }
+    },
+    mounted() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.intersectionRatio > 0) {
+                    entry.target.classList.add('fade-in-transition')
+                    entry.target.classList.remove('t-card', 'hidden')
+                    observer.unobserve(entry.target)
+                }
+            })
+        }, {
+            rootMargin: '-100px'
+        })
+        const cards = [...document.getElementsByClassName('card')]
+        cards.forEach(element => {
+            observer.observe(element)
+        });
+
+    },
+    created() {
+        window.addEventListener("resize", this.hidePicture);
+        this.hidePicture();
+    },
+    destroyed() {
+        window.removeEventListener("resize", this.hidePicture);
+    },
+}
 </script>
 
 <style scoped>
@@ -137,10 +157,6 @@
             height: 50%;
             min-height: fit-content;
             padding: 2rem 0;
-        }
-        .image-container{
-            width: 0%;
-            height: 0%;
         }
         .card{
             width: calc(90% - 2rem);

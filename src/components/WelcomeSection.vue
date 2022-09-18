@@ -4,7 +4,7 @@
             <h1 class="greeting">Hi my name's Spas</h1>
             <p class="short-text">A passionate computer science student and aspiring frontend developer.</p>
         </div>
-        <div class="image-container"></div>
+        <div rel="preload" class="image-container"></div>
     </div>
 </template>
 
@@ -71,6 +71,11 @@
         .image-container{
             width: 100%;
             min-height: 50vh;
+            background: url("/images/mountain-main-mobile.webp");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-blend-mode: darken;
         }
     }
 </style>

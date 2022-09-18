@@ -42,7 +42,7 @@
         width: 100%;
         height: 100%;
 
-        background: url('/images/nasa.webp');
+        background: url('/images/nasa_mobile.webp');
         background-color: rgba(19, 21, 29, 0.3);
         background-position: center;
         background-size: cover;
@@ -89,6 +89,7 @@
     @media only screen and (max-width: 650px){
         .wrapper{
             min-height: 400px;
+            background: url('/images/nasa_mobile.webp');
         }
     }
     @media only screen and (max-width: 1300px){
