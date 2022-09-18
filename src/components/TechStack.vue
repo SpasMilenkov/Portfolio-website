@@ -96,8 +96,7 @@ export default {
     }
     .image-container{
         width: 70%;
-        height: calc(100vh + 2rem);
-        background-image: url('/images/tech-stack-mountain.webp');
+        background-image: url('/images/tech-stack-mountain-mobile.webp');
         background-blend-mode: darken;
         background-color: rgba(0, 0, 0, 0.3);
         background-size: cover;
