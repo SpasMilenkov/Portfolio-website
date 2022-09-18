@@ -84,7 +84,7 @@
         width: 30%;
     }
     .image-container{
-        background: url("/images/sofia-cathedral.jpg");
+        background: url("/images/sofia.webp");
         background-color: rgba(0, 0, 0, 0.2);
         background-size: cover;
         background-repeat: no-repeat;

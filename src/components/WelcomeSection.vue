@@ -28,7 +28,7 @@
     .image-container{
         width: 70%;
         height: 100vh;
-        background: url("/images/mountain2.jpg");
+        background: url("/images/mountain-main.webp");
         background-color: rgba(0, 0, 0, 0.2);
         background-size: cover;
         background-repeat: no-repeat;

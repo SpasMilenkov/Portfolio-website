@@ -50,13 +50,13 @@ export default {
     }
     .contacts-text{
         font-size: 1.8rem;
-        color: #C0C0D8;
+        color: rgb(192, 192, 216);
         font-family: 'Lato', sans-serif;
         line-height: 2.2rem;
         width: 70%;
         max-width: 40rem;
         text-align: left;
-        background-color: rgb(81, 99, 153, 0.2);
+        background-color: rgba(81, 99, 153, 0.2);
         padding: 2rem 1rem ;
         border-radius: 10px;
     }

@@ -77,7 +77,7 @@
     .image-container{
         width: 70%;
         height: calc(100vh + 2rem);
-        background-image: url('/images/tech-stack-mountain.jpg');
+        background-image: url('/images/tech-stack-mountain.webp');
         background-blend-mode: darken;
         background-color: rgba(0, 0, 0, 0.3);
         background-size: cover;
@@ -85,10 +85,11 @@
     }
     .card{
         overflow: hidden;
-        width: calc(100% - 2rem);
+        width: calc(90% - 2rem);
         height: calc(30% - 2rem);
         border-radius: 10px;
         padding: 0 1rem;
+        padding: 2rem;
 
         display: flex;
         align-items: center;

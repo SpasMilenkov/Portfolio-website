@@ -48,7 +48,7 @@ export default {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.intersectionRatio > 0) {
-                    entry.target.classList.add('fade-up')
+                    entry.target.classList.add('fade-in-transition')
                     entry.target.classList.remove('hidden')
                     observer.unobserve(entry.target)
                 }
