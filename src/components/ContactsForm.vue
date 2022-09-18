@@ -5,8 +5,10 @@
                 <input class="text-input" type="text" name="name" placeholder="Name" required>
                 <input class="text-input" type="email" name="email" placeholder="Email" required>
             </div>
-            <input class="text-input" name="_subject" placeholder="subject">
+            <input class="text-input" name="_subject" placeholder="Subject">
             <textarea class="text-input message" type="text" name="message" placeholder="Message"></textarea>
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://clash2453.github.io/Portfolio-website/#contacts">
             <button class="send-button" type="submit">Send</button>
         </form>
     </div>
@@ -40,8 +42,8 @@
         width: 100%;
         height: 100%;
 
-        background: url('/images/nasa.jpg');
-        background-color: rgba(19, 21, 29, 0.6);
+        background: url('/images/nasa.webp');
+        background-color: rgba(19, 21, 29, 0.3);
         background-position: center;
         background-size: cover;
         background-blend-mode: darken;
@@ -59,7 +61,7 @@
         padding-top: 0.5rem;
         font-size: 1.5rem;
         height: 3.5rem;
-        border-bottom: 3px solid #516399;
+        border-bottom: 3px solid #647bbe;
         font-family: 'Robot', sans-serif;
         width: 80%;
         height: 2rem;
