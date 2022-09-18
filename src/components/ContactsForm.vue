@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <form class="container" action="https://formsubmit.co/spasmilenkovbusiness@gmail.com" method="POST">
+        <form class="container" action="https://formsubmit.co/4160c5bc579f39c21948a1db62d1aa90" method="POST">
             <div class="section-wrapper">
                 <input class="text-input" type="text" name="name" placeholder="Name" required>
                 <input class="text-input" type="email" name="email" placeholder="Email" required>
