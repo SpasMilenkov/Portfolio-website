@@ -38,7 +38,7 @@
     <div class="container">
         <div class="text-area">
             <h1 class="section-header hidden about-animation">About me</h1>
-            <p class="about-paragraph  hidden about-animation"> Hi, my name is Spas Milenkov. A 19-year-old Computer and Software Science student at Technical University Sofia. I aspire to become a passionate web developer, tech enthusiast, and big fan of the night sky.</p>
+            <p class="about-paragraph  hidden about-animation"> Hi, my name is Spas Milenkov. A 20-year-old Computer and Software Science student at Technical University Sofia. I aspire to become a passionate web developer, tech enthusiast, and big fan of the night sky.</p>
         </div>
         <div class="image-container"></div>
     </div>
