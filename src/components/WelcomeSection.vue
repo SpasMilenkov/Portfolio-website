@@ -1,81 +1,216 @@
 <template>
-    <div id="main-container">
-        <div class="container">
-            <h1 class="greeting">Hi my name's Spas</h1>
-            <p class="short-text">A passionate computer science student and aspiring frontend developer.</p>
+    <section class="welcome-container" :class="{ 'toggled': !toggled }">
+        <div id="tiles" :class="{ 'toggled': toggled }">
+            <div class="tile" v-for="(tile, index) in tiles" :key="index" :style="{ opacity: toggled ? 0 : 1 }"
+                @click="handleTileClick(index)"></div>
         </div>
-        <div rel="preload" class="image-container"></div>
-    </div>
+        <h1 id="title" class="centered">
+            My name is 
+            <span class="fancy">Spas Milenkov</span>.
+        </h1>
+    </section>
 </template>
 
+<script setup lang="ts">
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+import anime from 'animejs';
+
+const toggled = ref(true);
+const tiles = ref<number[]>([]);
+let columns = ref(0);
+let rows = ref(0);
+const toggle = () => {
+    toggled.value = !toggled.value;
+};
+
+const handleTileClick = (index: number) => {
+    toggle();
+
+    anime({
+        targets: '.tile',
+        opacity: toggled.value ? 0 : 1,
+        delay: anime.stagger(50, {
+            grid: [columns.value, rows.value],
+            from: index,
+        }),
+    });
+};
+
+const createGrid = () => {
+    tiles.value = [];
+    toggled.value = !toggled.value
+    const size = window.innerWidth > 800 ? 80 : 50;
+    columns.value = Math.floor(window.innerWidth / size);
+    rows.value = Math.floor(window.innerHeight / size);
+
+    for (let i = 0; i < columns.value * rows.value; i++) {
+        tiles.value.push(i);
+    }
+};
+
+onMounted(() => {
+    createGrid();
+    window.addEventListener('resize', createGrid);
+});
+
+onBeforeUnmount(() => {
+    window.removeEventListener('resize', createGrid);
+});
+</script>
+
 <style scoped>
-    #main-container{
-        max-width: 100%;
-        height: 100vh;
-        display: flex;
-        align-items: center;
+@keyframes background-pan {
+    from {
+        background-position: 0% center;
     }
-    .container{
-        width: 30%;
-        height: 100%;
-        background-color: #13233B;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 25%;
+
+    to {
+        background-position: -200% center;
     }
-    .image-container{
-        width: 70%;
-        height: 100vh;
-        background: url("/images/mountain-main.webp");
-        background-color: rgba(0, 0, 0, 0.2);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-blend-mode: darken;
-    }
-    .short-text{
-        font-size: 1.5rem;
-        font-family: 'Lato', sans-serif;
-        color: #C0C0D8;
-        width: 80%;
-        text-align: left;
-        line-height: 2rem;
-    }
-    .greeting{
-        color: #CAA387;
-        font-family: 'Roboto', sans-serif;
-        font-size: 3rem;
-        z-index: 2;
-        line-break: auto;
-        width: 80%;
-    }
-    @media only screen and (max-width: 720px){
-        #main-container{
-            flex-direction: column;
-        }
-        .greeting{
-            font-size: 2rem;
-            padding-bottom: 0;
-        }
-        .short-text{
-            font-size: 1.3rem;
-        }
-        .container{
-            width: 100%;
-            min-height: fit-content;
-            gap: 2rem;
-            padding: 2rem 0;
-        }
-        .image-container{
-            width: 100%;
-            min-height: 50vh;
-            background: url("/images/mountain-main-mobile.webp");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-blend-mode: darken;
-        }
-    }
+}
+
+.welcome-container {
+    --g1: rgb(98, 0, 234);
+    --g2: rgb(236, 64, 122);
+    animation: background-pan 10s linear infinite;
+    background: linear-gradient(to right,
+            var(--g1),
+            var(--g2),
+            var(--g1));
+    background-size: 200%;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0px;
+}
+
+.welcome-container.toggled {
+    animation: none;
+}
+
+.welcome-container.toggled>#title {
+    opacity: 0;
+}
+
+.welcome-container.toggled>#icon {
+    opacity: 1;
+}
+
+.welcome-container.toggled>#tiles>.tile:hover {
+    opacity: 0.1 !important;
+}
+
+.centered {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#tiles {
+    height: calc(100vh - 1px);
+    width: calc(100vw - 1px);
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+    grid-template-columns: repeat(v-bind('columns'), 1fr);
+    grid-template-rows: repeat(v-bind('rows'), 1fr);
+}
+
+.tile {
+    cursor: pointer;
+    position: relative;
+}
+
+.tile:hover:before {
+    background-color: rgb(30, 30, 30);
+}
+
+.tile:before {
+    background-color: rgb(15, 15, 15);
+    content: "";
+    inset: 0.5px;
+    position: absolute;
+}
+
+#title {
+    color: white;
+    font-family: "Rubik", sans-serif;
+    font-size: 6vw;
+    margin: 0px;
+    pointer-events: none;
+    transition: opacity 1200ms ease;
+    width: 50vw;
+    z-index: 3;
+}
+
+#title>.fancy {
+    color: var(--g2);
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5em;
+    line-height: 0.9em;
+}
+
+#icon {
+    color: rgba(255, 255, 255, 0.15);
+    font-size: 80vmin;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1200ms ease;
+    z-index: 1;
+}
+
+/* -- YouTube Link Styles -- */
+
+body.menu-toggled>.meta-link>span {
+    color: rgb(30, 30, 30);
+}
+
+#source-link {
+    bottom: 60px;
+}
+
+#source-link>i {
+    color: rgb(94, 106, 210);
+}
+
+#yt-link>i {
+    color: rgb(239, 83, 80);
+}
+
+.meta-link {
+    align-items: center;
+    backdrop-filter: blur(3px);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    bottom: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: inline-flex;
+    gap: 5px;
+    left: 10px;
+    padding: 10px 20px;
+    position: fixed;
+    text-decoration: none;
+    transition: background-color 400ms, border-color 400ms;
+    z-index: 10000;
+}
+
+.meta-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.meta-link>i,
+.meta-link>span {
+    height: 20px;
+    line-height: 20px;
+}
+
+.meta-link>span {
+    color: white;
+    font-family: "Rubik", sans-serif;
+    transition: color 400ms;
+}
 </style>
