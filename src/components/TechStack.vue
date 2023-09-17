@@ -1,168 +1,106 @@
 <template>
-    <div class="wrapper">
-        <div class="container">
-            <h1 class="section-header">My tech stack</h1>
-            <div class="card t-card hidden">
-                <h1 class="card-title">Front end</h1>
-                <div class="contents">
-                    <div class="image-wrapper">
-                        <img class="logo" src="/images/tech-stack-images/html.webp" alt="">
-                        <img class="logo" src="/images/tech-stack-images/css.webp" alt="">
-                        <img class="logo" src="/images/tech-stack-images/js.webp" alt="">
-                        <img class="logo" src="/images/tech-stack-images/vue.webp" alt="">
-                    </div>
-                </div>
+    <section class="tech-stack flex-column">
+        <h1 class="section-header">Tech stack</h1>
+        <div class="content-wrapper">
+            <div class="languages flex-wrapper">
+                <h1 class="subtitle">Languages</h1>
             </div>
-            <div class="card t-card hidden">
-                <h1 class="card-title">Back end</h1>
-                <div class="contents">
-                    <div class="image-wrapper">
-                        <img class="logo" src="/images/tech-stack-images/c-sharp.webp" alt="C sharp logo">
-                        <img class="logo" src="/images/tech-stack-images/dot-net.webp" alt="">
-                    </div>
-                </div>
+            <div class="frameworks flex-wrapper">
+                <h1 class="subtitle">Frameworks</h1>
+            </div>
+            <div class="os-tools flex-wrapper">
+                <h1 class="subtitle">Operation systems and tools</h1>
             </div>
         </div>
-        <div v-if="!mobile" class="image-container"></div>
-        </div>
+    </section>      
 </template>
 
-<script>
-export default {
-    data: function(){
-        return{
-            mobile: false
-        }
-    },
-    methods: {
-        hidePicture(){
-            if(window.innerWidth <= 875)
-                this.mobile = true;
-            if(window.innerWidth >= 875)
-                this.mobile = false;
-        }
-    },
-    mounted() {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.intersectionRatio > 0) {
-                    entry.target.classList.add('fade-in-transition')
-                    entry.target.classList.remove('t-card', 'hidden')
-                    observer.unobserve(entry.target)
-                }
-            })
-        }, {
-            rootMargin: '-100px'
-        })
-        const cards = [...document.getElementsByClassName('card')]
-        cards.forEach(element => {
-            observer.observe(element)
-        });
-
-    },
-    created() {
-        window.addEventListener("resize", this.hidePicture);
-        this.hidePicture();
-    },
-    destroyed() {
-        window.removeEventListener("resize", this.hidePicture);
-    },
-}
+<script setup lang="ts">    
 </script>
 
 <style scoped>
-    .wrapper{
-        display: flex;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        text-align: center;
+@keyframes background-pan {
+    from {
+        background-position: 0% center;
     }
-    .container{
-        width: calc(30% - 2rem);
-        min-height: 100vh;
-        height: 100%;
-        padding: 1rem;
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 3rem;
-        background: rgb(19, 30, 59)
-        
+    to {
+        background-position: -200% center;
     }
-    .image-container{
-        width: 70%;
-        background-image: url('/images/tech-stack-mountain-mobile.webp');
-        background-blend-mode: darken;
-        background-color: rgba(0, 0, 0, 0.3);
-        background-size: cover;
-        background-position: center;
-    }
-    .card{
-        overflow: hidden;
-        width: calc(90% - 2rem);
-        height: calc(30% - 2rem);
-        border-radius: 10px;
-        padding: 0 1rem;
-        padding: 2rem;
+}
+.flex-column,
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4vw;
+    
+}
+.tech-stack {
+    width: 100vw;
+    min-height: 100vh;
+    height: fit-content;
+    gap: 3rem;
+    justify-content: flex-start;
+    padding: 2.5rem;
+    background: url('/images/techstack-background.svg'), no-repeat, center var(--background);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        gap: 3rem;
-    }
-    .card:hover{
-        box-shadow: rgba(122, 161, 201, 0.2) 0px 54px 55px, rgba(122, 161, 201, 0.12) 0px -12px 30px, rgba(122, 161, 201, 0.12) 0px 4px 6px, rgba(122, 161, 201, 0.17) 0px 12px 13px, rgba(122, 161, 201, 0.09) 0px -3px 5px;
+    animation: background-pan 20s inline infinite; 
+}
+.flex-wrapper {
+    width: clamp(17rem, 35vw, 30rem);
+    height: 20rem;
+    background-color: var(--background-20);
+    color: var(--accent-color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 15px;
+    padding: 1rem;
+    position: relative;
+    transform-style: preserve-3d;
+}
+.section-header{
+    width: 100%;
+    text-align: center;
+}
+.content-wrapper {
+    flex-wrap: wrap;
+    flex: 1;
+}
+.flex-wrapper::before, 
+.flex-wrapper::after{
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  inset: -5px; /* control the spread */
+  transform: translate(10px, 8px); /* control the offsets */
+  transform: translate3d(10px, 8px, -1px); /* (X, Y, Z) */
+  	filter: blur(20px);
+}.languages::before,
+.languages::after{
+    background: linear-gradient(225deg, #f9c7ff, #9e63ff, rgba(0,35,255,1));
+}
+.frameworks::before{
+    background: linear-gradient(90deg, #06b46d, #08d79b, #0df6cf);
+}
+.os-tools::before{
+    background: linear-gradient(90deg, #f9bb73, #f9bb73, rgba(247,206,104,1));
+}   
+.subtitle{
+    font-size: 1.35rem;
+    width: 100%;
+    text-align: center;
 
-    }
-    .logo{
-        width: 5rem;
-        height: auto;
-        min-width: 80px;
-        min-height: 80px;
-    }
-    .card-title{
-        color: #7AA1C9;
-        font-family: 'Lato', sans-serif;
-        font-size: 3rem;
-        font-weight: 500;
-    }
-    .contents{
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-    .image-wrapper{
-        display: flex;
-        width: 100%;
-        height: 100%;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-    }
-    @media only screen and (max-width: 875px){
-        .wrapper{
-            flex-direction: column;
-        }
-        .container{
-            justify-content: center;
-            width: 100%;
-            height: 50%;
-            min-height: fit-content;
-            padding: 2rem 0;
-        }
-        .card{
-            width: calc(90% - 2rem);
-            padding: 1rem;
-        }
-        .logo{
-            width: 25%;
-        }
-    }
+}
+.content-wrapper {
+    flex-direction: row;
+}
+
+
+
 </style>
