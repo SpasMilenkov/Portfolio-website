@@ -1,37 +1,23 @@
-<script>
-    export default {
-        data: function(){
-            return {
-                profilePic: '/Portfolio-website/images/github-pfp.webp',
-            }
-        },
-        methods: {
-            setIcon(){
-                this.profilePic = '/Portfolio-website/images/github-icon.webp'
-            },
-            setProfile(){
-                this.profilePic = '/Portfolio-website/images/github-pfp.webp'
-            }
-        },
-        mounted(){
-            const fadeUpObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry =>{
-                    if(entry.intersectionRatio > 0){
-                        entry.target.classList.add('fade-in-transition')
-                        entry.target.classList.remove('hidden', 'about-animation')
+<script setup lang="ts">
+import {onMounted} from 'vue'
 
-                        fadeUpObserver.disconnect
-                    }
-                })
-            },{
-            })
-            const paragraph = [...document.getElementsByClassName('about-animation')]
-            paragraph.forEach(element => {
-                fadeUpObserver.observe(element)
-            });
-    }
-}
+onMounted( ()=> {
+    const fadeUpObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.intersectionRatio > 0) {
+                entry.target.classList.add('fade-in-transition')
+                entry.target.classList.remove('hidden', 'about-animation')
 
+                fadeUpObserver.disconnect
+            }
+        })
+    }, {
+    })
+    const paragraph = [...document.getElementsByClassName('about-animation')]
+    paragraph.forEach(element => {
+        fadeUpObserver.observe(element)
+    });
+})
 </script>
 
 <template>
@@ -58,7 +44,7 @@
     }
 
     .about-paragraph{
-        color: var(--orange);
+        color: var(--font-primary);
         font-family: 'Lato', sans-serif;
         height: 50%;
         font-size: 2rem;
@@ -72,7 +58,6 @@
         border-radius: 15px;
         width: 80%;
         box-shadow: none;
-        text-align: left;
         z-index: 1;
     }
     .text-area{

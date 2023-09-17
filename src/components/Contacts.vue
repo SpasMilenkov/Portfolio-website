@@ -10,12 +10,9 @@
     </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import ContactsForm from './ContactsForm.vue';
     
-export default {
-    components: { ContactsForm }
-}
 </script>
 
 
@@ -50,7 +47,7 @@ export default {
     }
     .contacts-text{
         font-size: 1.8rem;
-        color: rgb(192, 192, 216);
+        color: var(--accent-color);;
         font-family: 'Lato', sans-serif;
         line-height: 2.2rem;
         width: 70%;
