@@ -1,7 +1,18 @@
 @import "./base.css";
 
  :root{
-    --orange:rgb(202, 163, 135);
+   /* COLORS */
+
+   --background:hsl(228, 21%, 10%);
+   --background-20: #282d3e;
+   --font-primary: hsl(25, 39%, 66%);
+   --accent-color: hsl(240, 24%, 80%);
+
+   /* GRADIENT COLORS */
+   --g1: #caa387;
+   --g2: #7d4477;
+   --g3: #13151d;
+    /* --orange:rgb(202, 163, 135); */
  }
  main{
     display: flex;
@@ -10,10 +21,16 @@
     overflow-x: hidden;
  }
  .section-header{
-    color: var(--orange);
+    color: var(--font-primary);
     text-decoration: underline;
     font-family: 'Roboto', sans-serif;
-    font-size: 3.5rem;
+    font-size: 3rem;
+    padding:0.5rem;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border: 1px solid var(--g2);
+    max-width: 19rem;
  }
  .link{
    height: 3rem;
@@ -80,7 +97,7 @@
 }
 body{
    scrollbar-width: normal;
-   scrollbar-color: var(--orange) rgba(40, 43, 52, 0.2);
+   scrollbar-color: var(--font-primary) rgba(40, 43, 52, 0.2);
 }
 body::-webkit-scrollbar{
    width: 5px;
@@ -89,12 +106,12 @@ body::-webkit-scrollbar{
 body::-webkit-scrollbar-thumb{
    border-radius: 0.4vw;
    height: 30px;
-   background-color: var(--orange);
+   background-color: var(--font-primary);
 }
 body::-webkit-scrollbar-thumb:hover{
    border-radius: 5px;
    height: 30px;
-   background-color: var(--orange);
+   background-color: var(--font-primary);
 }
 body::-webkit-scrollbar-track{
    background-color: rgba(40, 43, 52, 0.9);
