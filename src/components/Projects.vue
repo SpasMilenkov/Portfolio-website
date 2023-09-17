@@ -16,59 +16,45 @@
     </section>
 </template>
 
-<script>
+<script setup lang="ts">
 //list of all projects 
 import json from '../projectList.json'
 import Project from './Project.vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 
-export default {
-    data: function () {
-        return {
-            projectList: json,
-            project: {},
-            showAble: false,
-            mobile: false,
-        };
-    },
-    methods: {
-        //show the live preview button if it is available
-        livePreview(path) {
-            if (path === 'false') return false
-            return true
-        },
-        hidePreview(){
-            if(window.innerWidth <= 1275)
-                this.mobile = true;
-            if(window.innerWidth >= 1275)
-                this.mobile = false;
-        }
-    },
-    //add animations as user scrolls
-    mounted() {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.intersectionRatio > 0) {
-                    entry.target.classList.add('fade-in-transition')
-                    entry.target.classList.remove('hidden')
-                    observer.unobserve(entry.target)
-                }
-            })
-        }, {
-            rootMargin: '-100px'
-        })
-        const projects = [...document.getElementsByClassName('project-card')]
-        projects.forEach(element => {
-            observer.observe(element)
+const projectList = ref(json);
+const mobile = ref(false);
+
+
+const hidePreview = () => {
+    if (window.innerWidth <= 1275) mobile.value = true;
+    if (window.innerWidth >= 1275) mobile.value = false;
+};
+
+onMounted(() => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.intersectionRatio > 0) {
+                entry.target.classList.add('fade-in-transition');
+                entry.target.classList.remove('hidden');
+                observer.unobserve(entry.target);
+            }
         });
-    },
-    created() {
-        window.addEventListener("resize", this.hidePreview);
-    },
-    destroyed() {
-        window.removeEventListener("resize", this.hidePreview);
-    },
-    components: { Project }
-}
+    }, {
+        rootMargin: '-100px',
+    });
+
+    const projects = [...document.getElementsByClassName('project-card')];
+    projects.forEach((element) => {
+        observer.observe(element);
+    });
+
+    window.addEventListener("resize", hidePreview);
+});
+
+onBeforeUnmount(() => {
+    window.removeEventListener("resize", hidePreview);
+});
 </script>
 
 <style scoped>

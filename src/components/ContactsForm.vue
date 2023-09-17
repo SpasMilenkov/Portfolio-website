@@ -14,12 +14,8 @@
     </div>
 </template>
 
-<script>
-    export default{
-        data: function(){
-            return{}
-        },
-    }
+<script setup lang="ts">
+
 </script>
 
 <style scoped>
@@ -57,7 +53,7 @@
     .text-input{
         border: none;
         background-color: rgba(200, 165, 121, 0.1);
-        color: rgba(210, 210, 210, 1);
+        color: var(--accent-color);
         padding-top: 0.5rem;
         font-size: 1.5rem;
         height: 3.5rem;

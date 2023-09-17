@@ -1,12 +1,12 @@
 <template>
     <section class="welcome-container" :class="{ 'toggled': !toggled }">
-        <div id="tiles" :class="{ 'toggled': toggled }">
+        <div id="tiles" >
             <div class="tile" v-for="(tile, index) in tiles" :key="index" :style="{ opacity: toggled ? 0 : 1 }"
                 @click="handleTileClick(index)"></div>
         </div>
-        <h1 id="title" class="centered">
-            My name is 
-            <span class="fancy">Spas Milenkov</span>.
+        <h1 id="title" class="centered" :style="{ opacity: toggled ? 0 : 1 }">
+                👋 I am
+            <span class="fancy" >Spas Milenkov.</span>
         </h1>
     </section>
 </template>
@@ -19,6 +19,7 @@ const toggled = ref(true);
 const tiles = ref<number[]>([]);
 let columns = ref(0);
 let rows = ref(0);
+
 const toggle = () => {
     toggled.value = !toggled.value;
 };
@@ -70,13 +71,13 @@ onBeforeUnmount(() => {
 }
 
 .welcome-container {
-    --g1: rgb(98, 0, 234);
-    --g2: rgb(236, 64, 122);
-    animation: background-pan 10s linear infinite;
+    animation: none;
     background: linear-gradient(to right,
             var(--g1),
             var(--g2),
-            var(--g1));
+            var(--g3),
+            var(--g1    ));
+
     background-size: 200%;
     height: 100vh;
     overflow: hidden;
@@ -84,19 +85,11 @@ onBeforeUnmount(() => {
 }
 
 .welcome-container.toggled {
-    animation: none;
-}
-
-.welcome-container.toggled>#title {
-    opacity: 0;
-}
-
-.welcome-container.toggled>#icon {
-    opacity: 1;
+    animation: background-pan 10s linear infinite;
 }
 
 .welcome-container.toggled>#tiles>.tile:hover {
-    opacity: 0.1 !important;
+    opacity: 1 !important;
 }
 
 .centered {
@@ -127,7 +120,7 @@ onBeforeUnmount(() => {
 }
 
 .tile:before {
-    background-color: rgb(15, 15, 15);
+    background-color: rgba(15, 15, 15,0.9);
     content: "";
     inset: 0.5px;
     position: absolute;
@@ -147,70 +140,7 @@ onBeforeUnmount(() => {
 #title>.fancy {
     color: var(--g2);
     font-family: 'Dancing Script', cursive;
-    font-size: 1.5em;
+    font-size: 1.2em;
     line-height: 0.9em;
-}
-
-#icon {
-    color: rgba(255, 255, 255, 0.15);
-    font-size: 80vmin;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 1200ms ease;
-    z-index: 1;
-}
-
-/* -- YouTube Link Styles -- */
-
-body.menu-toggled>.meta-link>span {
-    color: rgb(30, 30, 30);
-}
-
-#source-link {
-    bottom: 60px;
-}
-
-#source-link>i {
-    color: rgb(94, 106, 210);
-}
-
-#yt-link>i {
-    color: rgb(239, 83, 80);
-}
-
-.meta-link {
-    align-items: center;
-    backdrop-filter: blur(3px);
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 6px;
-    bottom: 10px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    display: inline-flex;
-    gap: 5px;
-    left: 10px;
-    padding: 10px 20px;
-    position: fixed;
-    text-decoration: none;
-    transition: background-color 400ms, border-color 400ms;
-    z-index: 10000;
-}
-
-.meta-link:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.meta-link>i,
-.meta-link>span {
-    height: 20px;
-    line-height: 20px;
-}
-
-.meta-link>span {
-    color: white;
-    font-family: "Rubik", sans-serif;
-    transition: color 400ms;
 }
 </style>

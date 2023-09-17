@@ -16,26 +16,18 @@
     </div>
 </template>
 
-<script>
+<script setup lang="ts">
+const props = defineProps(['project']);
 
+const livePreview = (path: string) => {
+    if (path === 'false') return false;
+    return true;
+};
 
-    export default {
-        props: ['project'],
-        data: function() {
-            return {
-            }
-        },
-        methods:{
-            livePreview(path){
-                if(path === 'false') return false
-                return true
-            },
-            showPreview(){
-                const picture = document.getElementById('preview');
-                picture.src = this.project.image;
-            },
-        }
-    }
+const showPreview = () => {
+    const picture = document.getElementById('preview') as HTMLImageElement;
+    picture.src = props.project.image;
+};
 </script>
 
 <style scoped>
@@ -45,7 +37,7 @@
         flex-direction: column;
         align-items: center;
         width: calc(90% - 1rem);
-        color: rgb(192, 192, 216);
+        color: var(--accent-color);
         font-family: 'Roboto', sans-serif;
         font-size: 2rem;
         gap: 1rem;
