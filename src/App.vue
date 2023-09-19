@@ -1,18 +1,9 @@
-<script>
+<script setup lang="ts">
 import WelcomeSection from './components/WelcomeSection.vue';
 import AboutMe from './components/AboutMe.vue';
 import Projects from './components/Projects.vue';
 import Contacts from './components/Contacts.vue';
 import TechStack from './components/TechStack.vue';
-export default {
-    components: {
-        WelcomeSection,
-        AboutMe,
-        Projects,
-        TechStack,
-        Contacts
-    }
-}
 </script>
 
 <template>
