@@ -1,13 +1,19 @@
 <template>
-    <section class="welcome-container" :class="{ 'toggled': !toggled }">
-        <div id="tiles" >
-            <div class="tile" v-for="(tile, index) in tiles" :key="index" :style="{ opacity: toggled ? 0 : 1 }"
-                @click="handleTileClick(index)"></div>
-        </div>
-        <h1 id="title" class="centered" :style="{ opacity: toggled ? 0 : 1 }">
+    <section class="">
+
+        <div class="welcome-container"  >
+            <div id="tiles" :class="{ 'toggled': !toggled }">
+                <div class="tile" v-for="(tile, index) in tiles" :key="index" :style="{ opacity: toggled ? 0 : 1 }"
+                    @click="handleTileClick(index)"></div>
+            </div>
+            <h1 id="title" class="centered" :style="{ opacity: toggled ? 0 : 1 }">
                 👋 I am
-            <span class="fancy" >Spas Milenkov.</span>
-        </h1>
+                <span class="fancy">Spas Milenkov.</span>
+            </h1>
+        </div>
+                <div id="back-panel" :style="{ opacity: !toggled ? 0 : 1 }">
+                        HERE I AM WILL YOU SEND ME AN ANGEL
+                </div>  
     </section>
 </template>
 
@@ -24,17 +30,19 @@ const toggle = () => {
     toggled.value = !toggled.value;
 };
 
+
 const handleTileClick = (index: number) => {
     toggle();
 
     anime({
         targets: '.tile',
         opacity: toggled.value ? 0 : 1,
-        delay: anime.stagger(50, {
+        delay: anime.stagger(65, {
             grid: [columns.value, rows.value],
             from: index,
         }),
-    });
+    }); 
+
 };
 
 const createGrid = () => {
@@ -75,18 +83,13 @@ onBeforeUnmount(() => {
     background: linear-gradient(to right,
             var(--g1),
             var(--g2),
-            var(--g3),
-            var(--g1    ));
-
-    background-size: 200%;
+            var(--g1));
     height: 100vh;
+    transition: opacity 700ms ease;
     overflow: hidden;
     margin: 0px;
 }
 
-.welcome-container.toggled {
-    animation: background-pan 10s linear infinite;
-}
 
 .welcome-container.toggled>#tiles>.tile:hover {
     opacity: 1 !important;
@@ -108,8 +111,18 @@ onBeforeUnmount(() => {
     display: grid;
     grid-template-columns: repeat(v-bind('columns'), 1fr);
     grid-template-rows: repeat(v-bind('rows'), 1fr);
+    transition: opacity 2000ms ease;
+    opacity: 0;
 }
-
+#tiles.toggled {
+    background: linear-gradient(to right,
+            var(--g1),
+            var(--g2),
+            var(--g1));
+    background-size: 200%;
+    animation: background-pan 10s linear infinite;
+    opacity: 1;
+}
 .tile {
     cursor: pointer;
     position: relative;
@@ -120,7 +133,7 @@ onBeforeUnmount(() => {
 }
 
 .tile:before {
-    background-color: rgba(15, 15, 15,0.9);
+    background-color: rgba(15, 15, 15, 0.95);
     content: "";
     inset: 0.5px;
     position: absolute;
@@ -142,5 +155,22 @@ onBeforeUnmount(() => {
     font-family: 'Dancing Script', cursive;
     font-size: 1.2em;
     line-height: 0.9em;
+}
+
+#back-panel {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: var(--background);
+    z-index: 1;
+    top: 0;
+    left: 0;
+    transition: opacity 500ms ease;
+    opacity: 0.56 ;
+    color: white;
+
+}
+#back-panel.toggled {
+    opacity: 0;
 }
 </style>
