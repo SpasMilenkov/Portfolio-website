@@ -5,9 +5,11 @@
 
    --background:#14161f;
    --background-20: #282d3e;
-   --background-30: hsl(226, 22%, 30%);
+   --background-30: rgb(60, 68, 93);
+   --background-transparent: rgba(20, 21, 24, 0.5);
    --font-primary: whitesmoke ;
    --accent-color: #c0c0d8;
+   --accent-color-95: hsl(240, 24%, 95%);
    --accent-color-40: hsl(240, 24%, 40%);
    --green-color: #50c878;
    --blue-color: #0dc4f6;
@@ -102,6 +104,16 @@
 .fade-out-transition{
    animation: fadeOut;
    animation-duration: 1s;
+}
+.separator {
+   content: "";
+   background: var(--green-color);
+   width: 100%;
+   height: 1rem;
+   position: absolute;
+   bottom: 0;
+   left: 0;
+
 }
 body{
    scrollbar-width: normal;
