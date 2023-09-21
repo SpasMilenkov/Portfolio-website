@@ -1,6 +1,6 @@
 <template>
     <section class="">
-        <div class="welcome-container"  >
+        <div class="welcome-container">
             <div id="tiles" :class="{ 'toggled': !toggled }">
                 <div class="tile" v-for="(tile, index) in tiles" :key="index" :style="{ opacity: toggled ? 0 : 1 }"
                     @click="handleTileClick(index)"></div>
@@ -10,16 +10,19 @@
                 <span class="fancy">Spas Milenkov.</span>
             </h1>
         </div>
-            <div id="back-panel" :style="{ opacity: !toggled ? 0 : 1 }">
-                <h1 class="main-title">
-                    Web Developer<br/>
-                    CS Student
-                </h1>
-                <div class="status-container">
-                    <div class="status-bubble"></div>
-                    <h2 class="subtitle">Open to work</h2>
-                </div>
-            </div>  
+        <div id="back-panel" :style="{ opacity: !toggled ? 0 : 1 }">
+            <h1 class="main-title">
+                Web Developer<br />
+                CS Student
+            </h1>
+            <div class="status-container">
+                <div class="status-bubble"></div>
+                <h2 class="subtitle">Open to work</h2>
+
+            </div>
+            <div class="separator"></div>
+
+        </div>
     </section>
 </template>
 
@@ -47,7 +50,7 @@ const handleTileClick = (index: number) => {
             grid: [columns.value, rows.value],
             from: index,
         }),
-    }); 
+    });
 
 };
 
@@ -120,6 +123,7 @@ onBeforeUnmount(() => {
     transition: opacity 2000ms ease;
     opacity: 0;
 }
+
 #tiles.toggled {
     background: linear-gradient(to right,
             var(--g1),
@@ -129,6 +133,7 @@ onBeforeUnmount(() => {
     animation: background-pan 10s linear infinite;
     opacity: 1;
 }
+
 .tile {
     cursor: pointer;
     position: relative;
@@ -173,7 +178,7 @@ onBeforeUnmount(() => {
     top: 0;
     left: 0;
     transition: opacity 500ms ease;
-    opacity: 0.56 ;
+    opacity: 0.56;
     color: var(--font-primary);
 
     display: flex;
@@ -181,9 +186,11 @@ onBeforeUnmount(() => {
     padding: 5vw;
 
 }
+
 #back-panel.toggled {
     opacity: 0;
 }
+
 .main-title {
     font-size: 5.5vw;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -191,6 +198,7 @@ onBeforeUnmount(() => {
     letter-spacing: 0.5rem;
     line-height: 150%;
 }
+
 .status-container {
     padding: 0.5rem;
     border-radius: 1rem;
@@ -206,11 +214,10 @@ onBeforeUnmount(() => {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border: solid 2px var(--green-color);
 }
+
 .status-bubble {
     width: 1.5rem;
     height: 1.5rem;
-    background-color: var(--green-color); 
+    background-color: var(--green-color);
     border-radius: 50%;
-}
-
-</style>
+}</style>
