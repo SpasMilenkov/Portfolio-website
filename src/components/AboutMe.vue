@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Icon } from '@iconify/vue/dist/iconify.js';
 import { onMounted } from 'vue'
 
 onMounted(() => {
@@ -21,52 +22,75 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="container">
+    <section class="container">
         <div class="text-area">
             <h1 class="section-header hidden about-animation">About me</h1>
             <p class="about-paragraph  hidden about-animation"> Hi, my name is Spas Milenkov. A 20-year-old Computer and
                 Software Science student at Technical University Sofia. I am a passionate web developer and tech
                 enthusiast.</p>
         </div>
-        <div class="snippets-container">
-
-            <div class="snippet-body">
-                <div class="circle-blue"></div>
-                <h2 class="subtitle">Graduated School for Foreign Languages Bertolt Brecht in the city of Pazardzhik, Bulgaria</h2>
+        <div class="snippets">
+            <img src="https://avatars.githubusercontent.com/u/87969078?v=4" alt="" class="picture">
+            <div class="flex">
+                <a href="">
+                    <Icon icon="bi:linkedin" width="1.7rem" />
+                </a>
+                <a href="">
+                    <Icon icon="bi:github" width="1.7rem" />
+                </a>
             </div>
+            <div class="snippets-container">
+                <div class="snippet-body">
+                    <div class="circle-blue"></div>
+                    <h2 class="subtitle">Graduated School for Foreign Languages Bertolt Brecht in the city of Pazardzhik,
+                        Bulgaria</h2>
+                </div>
 
-            <div class="snippet-body">
-                <div class="circle-blue"></div>
-                <h2 class="subtitle">Currently studying "Informatics and Software Science" at Technical University Sofia</h2>
+                <div class="snippet-body">
+                    <div class="circle-blue"></div>
+                    <h2 class="subtitle">Currently studying "Informatics and Software Science" at Technical University Sofia
+                    </h2>
+                </div>
             </div>
-            
         </div>
-    </div>
+        <div class="separator"></div>
+    </section>
 </template>
 
-
-
 <style scoped>
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    color: var(--accent-color-95);
+}
+
 .container {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background: radial-gradient(circle at 5px 5px, var(--accent-color-40) 1px, transparent 0), var(--background);
     background-size: 30px 30px;
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 5vw 7.5vw 5vw 5vw;
 }
 
 .about-paragraph {
     color: var(--font-primary);
+    background: var(--background-transparent);
     font-family: 'Lato', sans-serif;
     height: 50%;
     font-size: 1.5rem;
     line-height: 3rem;
     padding: 1rem;
-    width: clamp(15rem, 50vw, 20);
-    border-radius: 15px;
+    width: clamp(17rem, 50vw, 20rem);
+
+    border-radius: 1rem;
+    border: solid 1px var(--blue-color);
 }
 
 .section-header {
@@ -75,6 +99,7 @@ onMounted(() => {
     width: 80%;
     box-shadow: none;
     z-index: 1;
+    border: solid 1px var(--blue-color);
 }
 
 .text-area {
@@ -86,21 +111,29 @@ onMounted(() => {
     width: 30%;
 }
 
-.snippets-container {
-    height: 100vh;
-    width: 60%;
+.snippets-container,
+.snippets {
+    width: fit-content;
 
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 5rem;
+    gap: 2rem;
 }
 
-.snippet-body{
+.snippets {
+    background: var(--background-transparent);
+    padding: 3rem;
+    border-radius: 1rem;
+    border: 1px solid var(--g2);
+}
+
+.snippet-body {
     background: var(--background-20);
     padding: 1rem;
     border-radius: 1rem;
+    min-height: 7rem;
 
     width: 25rem;
     display: flex;
@@ -109,15 +142,26 @@ onMounted(() => {
 
     gap: 1rem;
 }
-.subtitle{
+
+.picture {
+    border-radius: 50%;
+    width: clamp(15rem, 15vw, 20rem);
+    content: "";
+}
+
+.subtitle {
     font-size: 1rem;
 }
 
-.circle-blue{
+.circle-blue {
     width: 2.5rem;
     aspect-ratio: 1;
     background: var(--blue-color);
     border-radius: 50%;
+}
+
+.separator {
+    background: var(--g2);
 }
 
 @media only screen and (max-width:750px) {
@@ -148,5 +192,4 @@ onMounted(() => {
     .section-header {
         font-size: 2.5rem;
     }
-}
-</style>
+}</style>
