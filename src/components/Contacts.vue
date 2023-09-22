@@ -18,4 +18,12 @@ import ContactsForm from './ContactsForm.vue';
 
 
 
-<style scoped></style>
+<style scoped>
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background: radial-gradient(circle at 5px 5px, var(--accent-color-40) 1px, transparent 0), var(--background);
+    background-size: 30px 30px;
+}
+</style>
