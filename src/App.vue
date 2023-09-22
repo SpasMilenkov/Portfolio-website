@@ -10,9 +10,6 @@
         <div id="stack" class="section">
             <TechStack />
         </div>
-        <div id="projects" class="section">
-            <Projects />
-        </div>
         <div id="contacts" class="section">
             <Contacts />
         </div>
@@ -23,9 +20,8 @@
 <script setup lang="ts">
 import WelcomeSection from './components/WelcomeSection.vue';
 import AboutMe from './components/AboutMe.vue';
-import Projects from './components/Projects.vue';
 import Contacts from './components/Contacts.vue';
-import TechStack from './components/TechStack.vue';
+import TechStack from './components/skillsetComponents/TechStack.vue';
 import MenuComponent from './components/MenuComponent.vue';
 import { onMounted, ref } from 'vue'
 
@@ -44,11 +40,8 @@ const observer = new IntersectionObserver((entries) => {
                 case 'stack':
                     currentSection.value = 2;
                     break
-                case 'projects':
-                    currentSection.value = 3;
-                    break
                 case 'contacts':
-                    currentSection.value = 4;
+                    currentSection.value = 3;
                     break
 
             }
