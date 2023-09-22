@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <form class="container" action="https://formsubmit.co/4160c5bc579f39c21948a1db62d1aa90" method="POST">
+        <form class="form-container" action="https://formsubmit.co/4160c5bc579f39c21948a1db62d1aa90" method="POST">
             <div class="section-wrapper">
                 <input class="text-input" type="text" name="name" placeholder="Name" required>
                 <input class="text-input" type="email" name="email" placeholder="Email" required>
@@ -19,82 +19,36 @@
 </script>
 
 <style scoped>
-    .wrapper,
-    .container{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 3rem;
-        min-height: calc(586px - 3rem);
-    }
-    .container{
-        padding: 2rem 1rem;
-        border-radius: 10px;
-        width: 100%;
-        height: 100%;
-    }
-    .wrapper{
-        width: 100%;
-        height: 100%;
+.wrapper {
+    width: clamp(20rem, 100% 30rem);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        background: url('/images/nasa_mobile.webp');
-        background-color: rgba(19, 21, 29, 0.3);
-        background-position: center;
-        background-size: cover;
-        background-blend-mode: darken;
-    }
-    .section-wrapper{
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        width: 80%;
-    }
-    .text-input{
-        border: none;
-        background-color: rgba(200, 165, 121, 0.1);
-        color: var(--accent-color);
-        padding-top: 0.5rem;
-        font-size: 1.5rem;
-        height: 3.5rem;
-        border-bottom: 3px solid #647bbe;
-        font-family: 'Robot', sans-serif;
-        width: 80%;
-        height: 2rem;
-    }
-    .text-input:focus{
-        outline: none;
-        background-color: rgba(200, 200, 200, 0.2);
-    }
-    .message{
-        height: 15rem;
-        padding-top: 0;
-        padding-left: 0;
-        resize: none;
-    }
-    .send-button{
-        background-color: rgb(16, 143, 99);
-        color: whitesmoke;
-        font-size: 1.5rem;
-        font-weight: 600;
-        font-family: 'Lato', sans-serif;
-        padding: 0.5rem 2rem;
-        border: none;
-        border-radius: 5px;
-    }
-    @media only screen and (max-width: 650px){
-        .wrapper{
-            min-height: 400px;
-            background: url('/images/nasa_mobile.webp');
-        }
-    }
-    @media only screen and (max-width: 1300px){
-        .section-wrapper{
-            flex-direction: column;
-            width: 100%;
-        }
-        .container{
-            gap: 1rem;
-        }
-    }
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+    background-color: var(--background-transparent);
+    padding: 1rem;
+
+    border-radius: 1rem;
+}
+
+.send-button {
+    width: fit-content;
+    background: var(--accent-color-40);
+    color: var(--font-primary);
+    font-size: 1.25rem;
+    letter-spacing: 0.1rem;
+    padding: 0.2rem 0.5rem;
+    font-weight: 600;
+    border-radius: 1rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 </style>
