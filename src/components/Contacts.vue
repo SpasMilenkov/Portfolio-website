@@ -1,23 +1,21 @@
 <template>
-    <div class="container">
+    <section class="container">
         <div class="form-container">
-            <ContactsForm/>
+            <ContactsForm />
         </div>
         <div class="content">
             <h1 class="section-header">Contacts</h1>
-            <p class="contacts-text">Saw something that got your attention? Got any suggestions on how to improve this portfolio? Or have a question? Send me an email!</p>
+            <p class="contacts-text">Saw something that got your attention? Got any suggestions on how to improve this
+                portfolio? Or have a question? Send me an email!</p>
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup lang="ts">
 import ContactsForm from './ContactsForm.vue';
-    
+
 </script>
 
 
 
-<style scoped>
-
-
-</style>
+<style scoped></style>
