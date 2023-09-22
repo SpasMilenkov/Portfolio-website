@@ -11,7 +11,7 @@ defineProps<{
     activeSlot: number
 }>()
 
-const circles = ['welcome', 'about-me', 'stack', 'projects', 'contacts']
+const circles = ['welcome', 'about-me', 'stack', 'contacts']
 
 
 </script>
