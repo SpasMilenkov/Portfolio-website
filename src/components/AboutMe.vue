@@ -31,14 +31,7 @@ onMounted(() => {
         </div>
         <div class="snippets">
             <img src="https://avatars.githubusercontent.com/u/87969078?v=4" alt="" class="picture">
-            <div class="flex">
-                <a href="">
-                    <Icon icon="bi:linkedin" width="1.7rem" />
-                </a>
-                <a href="">
-                    <Icon icon="bi:github" width="1.7rem" />
-                </a>
-            </div>
+
             <div class="snippets-container">
                 <div class="snippet-body">
                     <div class="circle-blue"></div>
@@ -58,14 +51,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.flex {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    width: 100%;
-    color: var(--accent-color-95);
-}
+
 
 .container {
     width: 100%;
@@ -127,6 +113,7 @@ onMounted(() => {
     padding: 3rem;
     border-radius: 1rem;
     border: 1px solid var(--g2);
+    width: clamp(20rem, 100%, 30rem);
 }
 
 .snippet-body {
@@ -135,7 +122,7 @@ onMounted(() => {
     border-radius: 1rem;
     min-height: 7rem;
 
-    width: 25rem;
+    max-width: 25rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -169,13 +156,15 @@ onMounted(() => {
         flex-direction: column;
         justify-content: flex-start;
         gap: 2rem;
-        padding-top: 2rem;
+        padding: 2rem 0;
+
     }
 
     .about-paragraph {
         font-size: 1.5rem;
         line-height: 2rem;
         height: 100%;
+        width: 100%;
     }
 
     .text-area {
@@ -188,8 +177,17 @@ onMounted(() => {
         width: 100%;
         justify-content: center;
     }
-
+    .snippet-body {
+        padding: 0;
+    }
+    .subtitle {
+        word-wrap: break-word;
+        white-space: none;
+    }
     .section-header {
         font-size: 2.5rem;
+    }
+    .snippets{
+        padding: 1rem;
     }
 }</style>
