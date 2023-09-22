@@ -220,4 +220,13 @@ onBeforeUnmount(() => {
     height: 1.5rem;
     background-color: var(--green-color);
     border-radius: 50%;
-}</style>
+}
+@media(max-width: 450px){
+    #title {
+        font-size: 3rem;
+    }
+    .main-title {
+        font-size: 2rem;
+    }
+}
+</style>
