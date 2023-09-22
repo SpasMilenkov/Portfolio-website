@@ -77,8 +77,9 @@
     gap: 1rem;
 }
 
-.text-input {
-    background-color: var(--background-20);
+.text-input,
+.input-label {
+    width: 100%;
     font-size: 1.25rem;
 
     color: var(--font-primary);
@@ -89,10 +90,16 @@
     border-radius: 1rem;
 
     resize: none;
-
+}
+.text-input {
+    background-color: var(--background-20);
 
 }
-
+.input-label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 #message-input,
 .section-wrapper {
     width: clamp(18rem, 100%, 40rem);
@@ -105,4 +112,5 @@
 .text-input::placeholder {
     opacity: 0.5;
 }
+
 </style>
