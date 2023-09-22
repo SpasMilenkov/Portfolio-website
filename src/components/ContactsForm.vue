@@ -2,8 +2,8 @@
     <div class="wrapper">
         <form class="form-container" action="https://formsubmit.co/4160c5bc579f39c21948a1db62d1aa90" method="POST">
             <div class="section-wrapper">
-                <input class="text-input" type="text" name="name" placeholder="Name" required>
-                <input class="text-input" type="email" name="email" placeholder="Email" required>
+                <input class="text-input" type="text" name="name" placeholder="John Doe" required>
+                <input class="text-input" type="email" name="email" placeholder="johnDoe@example.com" required>
             </div>
             <input class="text-input" name="_subject" placeholder="Subject">
             <textarea class="text-input message" type="text" name="message" placeholder="Message"></textarea>
@@ -50,5 +50,23 @@
     font-weight: 600;
     border-radius: 1rem;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.text-input{
+    background-color: var(--background-20);
+    font-size: 1.25rem;
+
+    color: var(--font-primary);
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    padding: 0.5rem;
+    border-radius: 1rem;
+
+    resize: none;
+
+    
+}
+.text-input::placeholder {
+    opacity: 0.5;
 }
 </style>
