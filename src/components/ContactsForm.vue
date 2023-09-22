@@ -54,7 +54,7 @@
     gap: 3rem;
     background-color: var(--background-transparent);
     padding: 1rem;
-
+    border: solid 1px var(--g2);
     border-radius: 1rem;
 }
 
@@ -102,7 +102,7 @@
 }
 #message-input,
 .section-wrapper {
-    width: clamp(18rem, 100%, 40rem);
+    width: clamp(17rem, 100%, 40rem);
 }
 
 #message-input {
