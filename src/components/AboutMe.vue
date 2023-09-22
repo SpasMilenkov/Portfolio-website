@@ -70,7 +70,7 @@ onMounted(() => {
 .container {
     width: 100%;
     min-height: 100vh;
-    background: radial-gradient(circle at 5px 5px, var(--accent-color-40) 1px, transparent 0), var(--background);
+    background: radial-gradient(circle at 5px 5px, var(--g2) 1px, transparent 0), var(--background);
     background-size: 30px 30px;
     position: relative;
     display: flex;
@@ -84,13 +84,13 @@ onMounted(() => {
     background: var(--background-transparent);
     font-family: 'Lato', sans-serif;
     height: 50%;
-    font-size: 1.5rem;
-    line-height: 3rem;
+    font-size: 1.25rem;
+    line-height: 2.5rem;
     padding: 1rem;
     width: clamp(17rem, 50vw, 20rem);
 
     border-radius: 1rem;
-    border: solid 1px var(--blue-color);
+    border: solid 1px var(--g2);
 }
 
 .section-header {
@@ -99,7 +99,7 @@ onMounted(() => {
     width: 80%;
     box-shadow: none;
     z-index: 1;
-    border: solid 1px var(--blue-color);
+    border: solid 1px var(--g2);
 }
 
 .text-area {
