@@ -5,20 +5,26 @@
 
    --background:#14161f;
    --background-20: #282d3e;
-   --background-30: rgb(60, 68, 93);
+   --background-30: #3c445d;
    --background-transparent: rgba(20, 21, 24, 0.5);
-   --font-primary: whitesmoke ;
+   --font-primary: #f5f5f5 ;
    --accent-color: #c0c0d8;
    --accent-color-95: hsl(240, 24%, 95%);
    --accent-color-40: hsl(240, 24%, 40%);
    --green-color: #50c878;
-   --blue-color: #0dc4f6;
+   --blue-color: hsl(193, 93%, 51%);
+   --red-color: #c41236;
+   /* --blue-color-transparent: rgba(5, 117, 160, 0.99); */
+
+
    /* GRADIENT COLORS */
    --g1: hsl(240, 24%, 40%);
    --g2: #7d4477;
    --g3: #13151d;
-    /* --orange:rgb(202, 163, 135); */
  }
+ /* *{
+   outline: solid 1px lime;
+ } */
  main{
     display: flex;
     flex-direction: column;
@@ -27,7 +33,6 @@
  }
  .section-header{
     color: var(--font-primary);
-    text-decoration: underline;
     font-family: 'Roboto', sans-serif;
     font-size: 3rem;
     padding:0.5rem;
@@ -36,6 +41,7 @@
     text-align: center;
     border: 1px solid var(--g2);
     max-width: 19rem;
+    font-weight: 600;
  }
  .subtitle {
     font-size: 1.5rem;
@@ -100,7 +106,7 @@
    to{
        opacity: 0;
    }
-}
+} 
 .fade-out-transition{
    animation: fadeOut;
    animation-duration: 1s;
@@ -118,6 +124,7 @@
 body{
    scrollbar-width: normal;
    scrollbar-color: var(--font-primary) rgba(40, 43, 52, 0.2);
+   overflow-x: hidden;
 }
 body::-webkit-scrollbar{
    width: 5px;
