@@ -85,7 +85,7 @@ const designSection: SectionSettings = {
     justify-content: center;
     padding: 1rem 0 0 0;
     align-items: center;
-    background: radial-gradient(circle at 5px 5px, var(--blue-color) 1px, transparent 0), var(--background);
+    background: radial-gradient(circle at 5px 5px, var(--accent-color-40) 1px, transparent 0), var(--background);
     background-size: 30px 30px;
     position: relative;
     animation: background-pan 20s inline infinite;
