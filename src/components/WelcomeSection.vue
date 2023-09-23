@@ -2,7 +2,7 @@
     <section class="">
         <div class="welcome-container">
             <div id="tiles" :class="{ 'toggled': !toggled }">
-                <div class="tile" v-for="(tile, index) in tiles" :key="index" :style="{ opacity: toggled ? 0 : 1 }"
+                <div class="tile" v-for="( index) in tiles" :key="index" :style="{ opacity: toggled ? 0 : 1 }"
                     @click="handleTileClick(index)"></div>
             </div>
             <h1 id="title" class="centered" :style="{ opacity: toggled ? 0 : 1 }">
@@ -221,10 +221,12 @@ onBeforeUnmount(() => {
     background-color: var(--green-color);
     border-radius: 50%;
 }
-@media(max-width: 450px){
+
+@media(max-width: 450px) {
     #title {
         font-size: 3rem;
     }
+
     .main-title {
         font-size: 2rem;
     }
