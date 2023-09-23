@@ -10,8 +10,8 @@
             <p class="description">{{ settings.description }}</p>
             <div class="project-container" v-if="settings.hasProject">
                 <h2 class="project-title">{{ settings.projectTitle }}</h2>
-                <button class="project-button" v-if="settings.projectLivePreview.available">Live preview</button>
-                <button class="project-button" v-if="!settings.projectLivePreview.available">Live preview</button>
+                <a :href="settings.projectLivePreview.url" class="project-button" v-if="settings.projectLivePreview.available">Live preview</a>
+                <a :href="settings.projectUrl" class="project-button" v-if="!settings.projectLivePreview.available">Live preview</a>
 
             </div>
         </div>
@@ -61,7 +61,7 @@ export interface SectionSettings {
     padding: 1rem;
     gap: 1rem;
     height: 100%;
-    min-height: 25rem;
+    min-height: 30rem;
 }
 
 .fe-table {
@@ -86,8 +86,10 @@ export interface SectionSettings {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     background-color: var(--background-20);
     padding: 1rem;
+    gap: 1rem;
 
     border-radius: 1rem;
 }
