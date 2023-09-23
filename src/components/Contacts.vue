@@ -5,7 +5,8 @@
         </div>
         <div class="links-container">
             <h1 class="subtitle">Contact me on social media</h1>
-            <p class="message">If you have any questions, opinions about some of my work, suggestions or offers, feel free to contact me via email or on social media. If not hope you at least enjoyed the website!</p>
+            <p class="message">If you have any questions, opinions about some of my work, suggestions or offers, feel free
+                to contact me via email or on social media. If not hope you at least enjoyed the website!</p>
             <div class="flex">
                 <a href="">
                     <Icon icon="bi:linkedin" width="2.5rem" />
@@ -41,10 +42,9 @@ import ContactsForm from './ContactsForm.vue';
 
 .links-container {
     display: flex;
-    /* align-items: center; */
     justify-content: center;
     flex-direction: column;
-    background-color: var(--red-color);
+    background-color: var(--blue-color); 
     width: clamp(20rem, 100%, 37.4rem);
     height: 100%;
     min-height: 100vh;
@@ -73,13 +73,14 @@ import ContactsForm from './ContactsForm.vue';
     color: var(--accent-color-95);
 }
 
-@media (max-width: 1450px){
+@media (max-width: 1450px) {
 
     .container {
         flex-direction: column-reverse;
         padding: 0;
         gap: 1rem;
     }
+
     .links-container {
         width: 100%;
     }
