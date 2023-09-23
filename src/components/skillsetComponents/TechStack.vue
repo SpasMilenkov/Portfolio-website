@@ -16,7 +16,7 @@ const frontendSection: SectionSettings = {
     title: 'Frontend',
     icons: ['devicon:html5', 'devicon:css3', 'devicon:javascript', 'devicon:typescript', 'devicon:vuejs'],
     backgroundColor: 'var(--green-color)',
-    description: "I've accumulated some valuable experience in crafting websites and web applications.I've worked with technologies like Vue, HTML, CSS, JavaScript, and TypeScript. Throughout my journey, I've developed websites that strike a balance between aesthetics and functionality.",
+    description: "I've accumulated some valuable experience in crafting websites and web applications. I've worked with technologies like Vue, HTML, CSS, JavaScript, and TypeScript. Throughout my journey, I've developed websites that strike a balance between aesthetics and functionality.",
     projectUrl: '',
     projectTitle: 'Restaurant Page',
     projectLivePreview: {
