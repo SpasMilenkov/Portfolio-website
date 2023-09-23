@@ -8,8 +8,8 @@
         </div>
         <div class="info-container">
             <p class="description">{{ settings.description }}</p>
-            <div class="project-container">
-                <h2 class="project-title">Project Title</h2>
+            <div class="project-container" v-if="settings.hasProject">
+                <h2 class="project-title">{{ settings.projectTitle }}</h2>
                 <button class="project-button" v-if="settings.projectLivePreview.available">Live preview</button>
                 <button class="project-button" v-if="!settings.projectLivePreview.available">Live preview</button>
 
@@ -30,9 +30,11 @@ export interface SectionSettings {
     projectUrl?: string,
     description: string,
     fontColor: string,
+    hasProject: boolean,
+    projectTitle?: string,
     projectLivePreview: {
         available: boolean,
-        url: string
+        url?: string
     }
 }
 
