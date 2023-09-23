@@ -151,7 +151,7 @@ onMounted(() => {
     background: var(--g2);
 }
 
-@media only screen and (max-width:750px) {
+@media only screen and (max-width:900px) {
     .container {
         flex-direction: column;
         justify-content: flex-start;
