@@ -164,7 +164,7 @@ onBeforeUnmount(() => {
 #title>.fancy {
     color: var(--g2);
     font-family: 'Dancing Script', cursive;
-    font-size: 1.2em;
+    font-size: 1em;
     line-height: 0.9em;
 }
 
