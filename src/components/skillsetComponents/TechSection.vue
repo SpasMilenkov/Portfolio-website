@@ -11,7 +11,7 @@
             <div class="project-container" v-if="settings.hasProject">
                 <h2 class="project-title">{{ settings.projectTitle }}</h2>
                 <a :href="settings.projectLivePreview.url" class="project-button" v-if="settings.projectLivePreview.available">Live preview</a>
-                <a :href="settings.projectUrl" class="project-button" v-if="!settings.projectLivePreview.available">Live preview</a>
+                <a :href="settings.projectUrl" class="project-button" v-if="!settings.projectLivePreview.available">View on GitHub</a>
 
             </div>
         </div>
@@ -128,7 +128,9 @@ export interface SectionSettings {
     font-weight: 600;
     border-radius: 1rem;
 }
-
+.project-button:hover {
+    background-color: var(--accent-color-45);
+}
 @media (max-width: 1080px){
     .stack-section {
         flex-direction: column;
