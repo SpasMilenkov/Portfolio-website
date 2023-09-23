@@ -16,7 +16,7 @@ const frontendSection: SectionSettings = {
     title: 'Frontend',
     icons: ['devicon:html5', 'devicon:css3', 'devicon:javascript', 'devicon:typescript', 'devicon:vuejs'],
     backgroundColor: 'var(--green-color)',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quia ullam enim reiciendis nobis magni quod, distinctio sed culpa corrupti itaque ea nulla dolores maiores iure! Doloremque rem reprehenderit deleniti!',
+    description: "I've accumulated some valuable experience in crafting websites and web applications.I've worked with technologies like Vue, HTML, CSS, JavaScript, and TypeScript. Throughout my journey, I've developed websites that strike a balance between aesthetics and functionality.",
     projectUrl: '',
     projectTitle: 'Restaurant Page',
     projectLivePreview: {
@@ -30,7 +30,7 @@ const backendSection: SectionSettings = {
     title: 'Backend',
     icons: ['devicon:csharp', 'devicon:dotnetcore'],
     backgroundColor: '#4169e1',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quia ullam enim reiciendis nobis magni quod, distinctio sed culpa corrupti itaque ea nulla dolores maiores iure! Doloremque rem reprehenderit deleniti!',
+    description: "I've gained valuable experience in backend development, with a focus on C#, ASP.NET, and Entity Framework. Over time, I've designed backend systems that effectively manage data and handle complex business processes.I'm confident in my ability to utilize C#, ASP.NET, and Entity Framework to develop reliable backend solutions.",
     projectUrl: 'https://github.com/Clash2453/School-Management-System',
     projectTitle: 'School Management System',
     projectLivePreview: {
@@ -43,7 +43,7 @@ const osSection: SectionSettings = {
     title: 'Operating Systems',
     icons: ['devicon:linux', 'devicon:windows8'],
     backgroundColor: 'var(--background)',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quia ullam enim reiciendis nobis magni quod, distinctio sed culpa corrupti itaque ea nulla dolores maiores iure! Doloremque rem reprehenderit deleniti!',
+    description: "I am proficient in working on both Linux and Windows environments, and can easily handle tasks ranging from system administration to software development.",
     projectUrl: '',
     projectLivePreview: {
         available: true,
@@ -56,7 +56,7 @@ const versionControl: SectionSettings = {
     title: 'Version Control',
     icons: ['devicon:git', 'devicon:github'],
     backgroundColor: '#FFBA08',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quia ullam enim reiciendis nobis magni quod, distinctio sed culpa corrupti itaque ea nulla dolores maiores iure! Doloremque rem reprehenderit deleniti!',
+    description: 'Over the last two years, I have gained extensive experience using Git and Git Hub for managing versions of my projects. As a result, I can confidently say that Git has become an integral part of my development workflow.',
     projectUrl: '',
     projectLivePreview: {
         available: true,
@@ -69,7 +69,7 @@ const designSection: SectionSettings = {
     title: 'Design',
     icons: ['devicon:figma', 'devicon:gimp'],
     backgroundColor: 'var(--g1)',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quia ullam enim reiciendis nobis magni quod, distinctio sed culpa corrupti itaque ea nulla dolores maiores iure! Doloremque rem reprehenderit deleniti!',
+    description: 'When it comes to web design, I have experience using tools like Figma to create beautiful, responsive, and functional UI/UX solutions.',
     projectUrl: '',
     projectLivePreview: {
         available: true,
