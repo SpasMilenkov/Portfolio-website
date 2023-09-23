@@ -18,23 +18,26 @@ const frontendSection: SectionSettings = {
     backgroundColor: 'var(--green-color)',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quia ullam enim reiciendis nobis magni quod, distinctio sed culpa corrupti itaque ea nulla dolores maiores iure! Doloremque rem reprehenderit deleniti!',
     projectUrl: '',
+    projectTitle: 'Restaurant Page',
     projectLivePreview: {
         available: true,
-        url: ''
+        url: 'https://clash2453.github.io/Restaurant-Page/'
     },
-    fontColor: 'var(--background-20)' 
+    fontColor: 'var(--background-20)',
+    hasProject: true
 }
 const backendSection: SectionSettings = {
     title: 'Backend',
     icons: ['devicon:csharp', 'devicon:dotnetcore'],
-    backgroundColor: '#51BBFE',
+    backgroundColor: '#4169e1',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quia ullam enim reiciendis nobis magni quod, distinctio sed culpa corrupti itaque ea nulla dolores maiores iure! Doloremque rem reprehenderit deleniti!',
-    projectUrl: '',
+    projectUrl: 'https://github.com/Clash2453/School-Management-System',
+    projectTitle: 'School Management System',
     projectLivePreview: {
-        available: true,
-        url: ''
+        available: false,
     },
-    fontColor: 'var(--background-20)'
+    fontColor: 'var(--font-primary)',
+    hasProject: true
 }
 const osSection: SectionSettings = {
     title: 'Operating Systems',
@@ -46,7 +49,8 @@ const osSection: SectionSettings = {
         available: true,
         url: ''
     },
-    fontColor: 'var(--font-primary)'
+    fontColor: 'var(--font-primary)',
+    hasProject: false
 }
 const versionControl: SectionSettings = {
     title: 'Version Control',
@@ -58,7 +62,8 @@ const versionControl: SectionSettings = {
         available: true,
         url: ''
     },
-    fontColor: 'var(--background-20)'
+    fontColor: 'var(--background-20)',
+    hasProject: false
 }
 const designSection: SectionSettings = {
     title: 'Design',
@@ -70,7 +75,8 @@ const designSection: SectionSettings = {
         available: true,
         url: ''
     },
-    fontColor: 'var(--font-primary)'
+    fontColor: 'var(--font-primary)',
+    hasProject: false
 }  
 </script>
 
