@@ -8,11 +8,11 @@
             <p class="message">If you have any questions, opinions about some of my work, suggestions or offers, feel free
                 to contact me via email or on social media. If not hope you at least enjoyed the website!</p>
             <div class="flex">
-                <a href="">
-                    <Icon icon="bi:linkedin" width="2.5rem" />
+                <a  href="https://bg.linkedin.com/in/spas-milenkov-89a172279 ">
+                    <Icon class="icon" icon="bi:linkedin" width="2.5rem" />
                 </a>
-                <a href="">
-                    <Icon icon="bi:github" width="2.5rem" />
+                <a  href="https://github.com/Clash2453">
+                    <Icon class='icon' icon="bi:github" width="2.5rem"/>
                 </a>
             </div>
         </div>
@@ -45,7 +45,7 @@ import ContactsForm from './ContactsForm.vue';
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: var(--blue-color); 
+    background-color: var(--blue-color);
     width: clamp(20rem, 100%, 37.4rem);
     height: 100%;
     min-height: 100vh;
@@ -72,6 +72,10 @@ import ContactsForm from './ContactsForm.vue';
     gap: 1rem;
     width: clamp(15rem, 100%, 20rem);
     color: var(--accent-color-95);
+}
+
+.icon:hover {
+    color:var(--accent-color );
 }
 
 @media (max-width: 1450px) {
