@@ -34,6 +34,7 @@ import ContactsForm from './ContactsForm.vue';
 
     width: 100%;
     min-height: 100vh;
+    height: 100%;
     background: radial-gradient(circle at 5px 5px, var(--accent-color-40) 1px, transparent 0), var(--background);
     background-size: 30px 30px;
 
@@ -77,12 +78,13 @@ import ContactsForm from './ContactsForm.vue';
 
     .container {
         flex-direction: column-reverse;
-        padding: 0;
         gap: 1rem;
+        padding: 0 0 1rem 0;
     }
 
     .links-container {
         width: 100%;
+        min-height: 30rem;
     }
 }
 </style>
