@@ -3,7 +3,7 @@
         <div id="welcome" class="section">
             <WelcomeSection />
         </div>
-        <MenuComponent class="arrow" :active-slot="currentSection" />
+        <MenuComponent class="arrow" v-if="showMenu" :active-slot="currentSection" />
         <div id="about-me" class="section">
             <AboutMe />
         </div>
@@ -29,6 +29,8 @@ const currentSection = ref(0)
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.intersectionRatio > 0) {
+            console.log(window.innerWidth / 5);
+            
             switch (entry.target.id) {
                 case 'welcome':
                     currentSection.value = 0;
@@ -37,11 +39,23 @@ const observer = new IntersectionObserver((entries) => {
                     currentSection.value = 1;
                     console.log(currentSection.value)
                     break
-                case 'stack':
+                case 'frontend':
                     currentSection.value = 2;
                     break
-                case 'contacts':
+                case 'backend':
                     currentSection.value = 3;
+                    break
+                case 'os':
+                    currentSection.value = 4;
+                    break
+                case 'ver-control':
+                    currentSection.value = 5;
+                    break
+                case 'design':
+                    currentSection.value = 6;
+                    break
+                case 'contacts':
+                    currentSection.value = 7;
                     break
 
             }
@@ -49,13 +63,24 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, {
-    rootMargin: '-150px',
+    rootMargin: `${window.innerWidth / 2}px`,
 });
+
+const showMenu = ref<boolean>(true)
+const toggleMenu = () => {
+    if (window.innerWidth <= 450) {
+        showMenu.value = false;
+        return;
+    }
+    showMenu.value = true
+}
 onMounted(() => {
     const sections = [...document.getElementsByClassName('section')];
     sections.forEach((element) => {
         observer.observe(element);
     });
+    addEventListener("resize", toggleMenu)
+    toggleMenu()
 })
 
 
