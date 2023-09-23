@@ -1,11 +1,11 @@
 <template>
     <section class="tech-stack flex-column">
         <h1 class="section-header">Tech stack</h1>
-        <TechSection :settings="frontendSection" />
-        <TechSection :settings="backendSection" />
-        <TechSection :settings="osSection" />
-        <TechSection :settings="versionControl" />
-        <TechSection :settings="designSection" />
+        <TechSection class="section" id="frontend" :settings="frontendSection" />
+        <TechSection class="section" id="backend" :settings="backendSection" />
+        <TechSection class="section" id="os" :settings="osSection" />
+        <TechSection class="section" id="ver-control" :settings="versionControl" />
+        <TechSection class="section" id="design" :settings="designSection" />
     </section>
 </template>
 
