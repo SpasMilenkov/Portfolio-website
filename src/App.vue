@@ -63,7 +63,7 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, {
-    rootMargin: `${window.innerWidth / 2}px`,
+    rootMargin: `-400px`,
 });
 
 const showMenu = ref<boolean>(true)
