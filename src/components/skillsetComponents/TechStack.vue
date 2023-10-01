@@ -21,7 +21,7 @@ const frontendSection: SectionSettings = {
     projectTitle: 'Restaurant Page',
     projectLivePreview: {
         available: true,
-        url: 'https://clash2453.github.io/Restaurant-Page/'
+        url: 'https://spasmilenkov.github.io/Restaurant-Page/'
     },
     fontColor: 'var(--background-20)',
     hasProject: true
